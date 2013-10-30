@@ -1,0 +1,22 @@
+@(user: User, list: Boolean)
+
+<nav>
+  <ul id="games">
+    @for(game <- Game.list(user)) {
+      @views.html.nav.game(game, user)
+    }
+  </ul>
+  
+  @if(list && user.isGm) {
+    <button class="icon plus sidebar" id="newgame"></button>
+  }
+  
+  @if(user.isAdmin) {
+    <a href="@routes.Admin.users">Admin</a>
+  }
+  
+  <form enctype="multipart/form-data" method="post" id="fileinfo" style="display: none;">
+    <input type="file" name="picture">
+  </form>
+  
+</nav>

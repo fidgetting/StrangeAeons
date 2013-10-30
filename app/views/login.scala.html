@@ -1,0 +1,64 @@
+@(form: Form[(String, String)])(implicit flash: Flash)
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 id="logo">Login</h1>
+      <div id="signup">
+        <a class="btn primary" href="@routes.Auth.signup()">Sign Up</a>
+      </div>
+    </header>
+      
+    <section id="login">
+  
+      @helper.form(routes.Auth.authenticate) {
+
+        @form.globalError.map { error =>
+          <div class="error">
+            @error.message
+          </div>
+        }
+
+        @flash.get("error").map { message =>
+          <div class="error">
+            @message
+          </div>
+        }
+        
+        @flash.get("success").map { message =>
+          <div class="success">
+            @message
+          </div>
+        }
+        
+        <h1>Sign In</h1>
+        
+        <p>
+          <input type="email" name="email" placeholder="Email" id="email" value="@form("email").value">
+        </p>
+        <p>
+          <input type="password" name="password" id="password" placeholder="Password">
+        </p>
+        <div class="bottom">
+          <span class="openid">
+            <div class="label">OpenID</div>
+            <a href="@routes.Auth.openid("google")"><img id="google" src="@routes.Assets.at("images/icons/google.ico")"></a>
+            <a href="@routes.Auth.openid("yahoo")"><img id="yahoo" src="@routes.Assets.at("images/icons/yahoo.png")"></a>
+          </span>
+          <span class="submit">
+            <button type="submit" name="login"  class="btn primary">Login</button>
+          </span>
+        </div>
+        
+      }
+    </section>
+  </body>
+</html>
+
+
+

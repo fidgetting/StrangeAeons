@@ -1,0 +1,29 @@
+@(getter: User, user: User, game: Game, character: Character, gm: Boolean = false)
+
+<div class="inline char@character.id.get" data-id="@character.id.get" data-name="@character.minName">
+  <div class="box character">
+    <img
+      class="picture"
+      data-id="@character.id"
+      src="@character.imgUrl"
+      width="75"
+      height="81"
+      alt="character pic">
+    @if(character.user_id == getter.id.get) {
+      <div class="topright">
+        <button class="icon delete remove" id="@character.id"></button>
+      </div>
+    } else {
+      @if(gm) {
+        <div class="topright">
+          <button class="icon enter take" id=@character.id"></button>
+        </div>
+      }
+    }
+    <span>
+      <a id="c_name" href="@routes.Characters.display(character.id.get)"><b>@character.name</b></a>
+      <a class="gameLink" href="@routes.Application.user(user.name)">@user.name</a>
+      <a class="gameLink" href="@routes.Application.game(game.name)">@game.name</a>
+    </span>
+  </div>
+</div>

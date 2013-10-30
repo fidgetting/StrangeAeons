@@ -1,0 +1,47 @@
+@(user: User, form: Form[(String, String, String, String)])(implicit flash: Flash)
+
+@main(user, false) {
+  <div id="profile">
+    <h1>@user.name</h1>
+
+    @helper.form(routes.Auth.change) {
+
+        @flash.get("error").map { message =>
+            <div class="error">
+                @message
+            </div>
+        }
+
+        @flash.get("success").map { message =>
+            <div class="success">
+                @message
+            </div>
+        }
+
+        <h2>Change Password</h2>
+        <input type="hidden" name="email" value="@user.email">
+        <p>
+            <input type="password" name="current" placeholder="Current Password">
+        </p>
+        <p>
+            <input type="password" name="password" placeholder="New Password">
+        </p>
+        <p>
+            <input type="password" name="confirm" placeholder="Confirm Password">
+        </p>
+        <div class="bottom">
+            <span class="openid">
+                <div class="label">OpenID</div>
+                <a href="@routes.Auth.openid_switch("google")"><img id="google" src="@routes.Assets.at("images/icons/google.ico")"></a>
+                <a href="@routes.Auth.openid_switch("yahoo")"><img id="yahoo" src="@routes.Assets.at("images/icons/yahoo.png")"></a>
+            </span>
+            <span class="submit">
+                <button type="submit" name="change"  class="btn primary">Change</button>
+            </span>
+        </div>
+      }
+
+
+  </div>
+
+}

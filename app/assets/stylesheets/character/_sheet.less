@@ -1,0 +1,85 @@
+// -----------------------------------
+// CHARACTER SHEET
+// -----------------------------------
+// author: fidgetting@gmail.com - 2013
+// -----------------------------------
+
+body {
+  div {
+    .notebox {
+      display: block;
+      padding-left: 2px;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 6px 6px 6px 6px;
+      border-color: #DDDDDD;
+      position: relative;
+      padding-top: 3px;
+      margin-bottom:10px;
+      font-color: black;
+      font-size: 11pt;
+    }
+    #characterInfo {
+      overflow: hidden;
+      padding: 1em;
+    }
+  }
+  .setVisible {
+    margin: 0;
+    position: absolute;
+    top: 3px;
+    right: 80px;
+  }
+  .texVisible {
+    margin: 0;
+    position: absolute;
+    top: 2px;
+    right: 96px;
+  }
+  .setPublic {
+    margin: 0;
+    position: absolute;
+    top: 3px;
+    right: 20px;
+  }
+  .texPublic {
+    margin: 0;
+    position: absolute;
+    top: 2px;
+    right: 35px;
+  }
+  #dataSet {
+    display: inline-block;
+    margin: 10px;
+  }
+  .csection {
+    margin-bottom: 10px;
+  }
+
+  .datawidget {
+    cursor: pointer;
+    position: relative;
+  }
+  .dataname {
+    font-weight: bold;
+    margin: 2px;
+  }
+  .datain {
+    height: 20px;
+    display: inline-block;
+  }
+  .association {
+    margin-left: 10px;
+  }
+
+  .delbtn {
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    opacity: 0.0;
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+}
+

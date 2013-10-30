@@ -1,0 +1,140 @@
+// -----------------------------------
+// CHARACTER BOX
+// -----------------------------------
+// author: fidgetting@gmail.com - 2013
+// -----------------------------------
+
+.box {
+  background-color: #fff;
+  display: inline-table;
+  border: 1px solid black;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  &:hover {
+    background-color: #ffffdf;
+  }
+  #c_name {
+    font-size: 16pt;
+  }
+  img {
+    position: absolute;
+    padding: 3px 0px 0px 3px;
+    border-radius: 6px;
+  }
+  span {
+    margin-top:  5px;
+    margin-left: 85px;
+    display: block;
+    font-size: 16pt;
+  }
+  a {
+    display: block;
+    font-size: 10pt;
+  }
+}
+
+#createContainer {
+  margin: 5px;
+}
+
+.busy {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.25);
+  
+  &:hover {
+    cursor: wait;
+  }
+}
+
+.inline {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.charIcon {
+	width: 75px;
+	height: 81px;
+}
+
+.character {
+  width: 350px;
+  height: 86px;
+}
+
+.note {
+  padding-left: 2px;
+  position: relative;
+  padding-top: 3px;
+  margin-bottom:10px;
+  width: 98%;
+  
+  .dummy{}
+  
+  .inner {
+    margin: 5px;
+  }
+  
+  span {
+    margin-top: 0px;
+    margin-left: 2px;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+  
+  img {
+    position: relative;
+  }
+  
+  pre {
+    font-family: 'Courier New', Courier, monospace;
+  }
+}
+
+.public {
+  &:hover {
+    border-color: rgb(0, 0, 255);
+  }
+}
+  
+.private {
+  &:hover {
+    border-color: rgb(255, 0, 0);
+  }
+}
+
+.notecreate {
+  width: 98%;
+  position: relative;
+  
+  .dummy{}
+  
+  span {
+    margin-top: 0px;
+    margin-left: 2px;
+    font-size: 10pt;
+  }
+  input {
+    position: relative;
+    margin: 3px 0px 0px 3px;
+  }
+  textarea {
+    margin: 5px 4px 0px;
+    width: 99%;
+  }
+}
+
+.create {
+  border-color: #eee;
+  color: #eee;
+  cursor: pointer;
+  box-shadow: none;
+  &:hover {
+    background-color: #ffffff;
+  }
+  .createLink {
+    width: 175px;
+    display: block;
+  }
+}
+

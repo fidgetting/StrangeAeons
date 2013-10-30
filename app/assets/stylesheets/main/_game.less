@@ -1,0 +1,158 @@
+// -----------------------------------
+// MAIN
+// -----------------------------------
+// author: fidgetting@gmail.com - 2013
+// -----------------------------------
+
+@inputWidth: 300px;
+
+#gameCreate {
+  padding: 5px;
+  
+  .aspName {
+    font-weight: bold;
+    font-size: 11pt;
+    margin: 3px;
+  }
+  
+  .scrolls {
+    width: inherit;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    border: 1px solid grey;
+    background: #fff;
+    margin-top: 5px;
+  }
+  
+  .gamebox {
+    height: 300px;
+  }
+  
+  .srcbox {
+    height: 607px;
+  }
+  
+  .header {
+    width: 296px;
+  }
+  
+  .aspect {
+    display: block;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    
+    .name {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+    
+    &:hover {
+      background-color: #eee;
+    }
+    
+    .types {
+      width: 267px;
+      background-color: #fff;
+      border: 1px solid black;
+      padding: 2px;
+      margin-top: 2px;
+    }
+    
+    .tinner {
+      width: 263px;
+      margin: 2px;
+    }
+    
+    .right {
+      text-align: right;
+    }
+  }
+  
+  #willbe {
+    padding: 5px;
+  }
+  
+  #options {
+    padding: 5px;
+  }
+  
+  .hname  { width: 250px; }
+  .tname  { width: 206px; }
+  .tvalue { width: 40px; text-align: center; }
+
+  /* new Stuff, TODO figure out what is needed in this file */
+  .mkLink {
+    width: 200px;
+  }
+
+  .numberDefine {
+    width: 200px;
+
+    .numberLabel {
+      display: inline-block;
+      width: 138px;
+    }
+
+    .numberInput {
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+    }
+  }
+
+  .maskDefine {
+    .maskLabel {
+      margin: 4px;
+      font-weight: bold;
+      text-align: right;
+      cursor: pointer;
+
+      span {
+        padding: 3px;
+      }
+    }
+
+    .inline {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .maskToBody {
+      vertical-align: top;
+      margin: 3px;
+      padding: 2px;
+      border: 1px solid black;
+      border-radius: 3px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+      width: 180px;
+    }
+
+    .maskSelected {
+      span {
+        background-color: #FDFD9A;
+        border: 1px solid #EEE;
+        border-radius: 2px;
+        padding: 2px;
+      }
+    }
+
+    .toLabel {
+      margin-left: 10px;
+      span {
+        display: inline-block;
+        width: 113px;
+      }
+    }
+
+    .toInput {
+      width: 50px;
+      text-align: center;
+    }
+  }
+}
+
+.error {
+  border-color: red;
+}

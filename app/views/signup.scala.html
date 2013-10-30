@@ -1,0 +1,52 @@
+@(form: Form[(String, String, String, String)])(implicit flash: Flash)
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.0.0.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
+    <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/libs.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/login.js")"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1 class="fill">Sign Up</h1>
+    </header>
+      
+    <section id="login">
+  
+      @helper.form(routes.Auth.register) {
+        
+        @form.globalError.map { error =>
+          <div class="alert-message warning">
+            @error.message
+          </div>
+        }
+        
+        <h2>Sign Up</h2>
+        
+        <p>
+          <input type="email" name="email" id="email" placeholder="Email" id="email" value="@form("email").value" required>
+        </p>
+        <p>
+          <input type="text" name="name" id="name" placeholder="Name" id="name" required>
+        </p>
+        <p>
+          <input type="password" name="password" id="password" placeholder="Password" required>
+        </p>
+        <p>
+          <input type="password" name="confirm" id="confirm" placeholder="Confirm Password" required>
+        </p>
+        <p>
+          <button type="submit" id="register"  class="btn primary">Register</button>
+        </p>
+      }
+    </section>
+  </body>
+  
+  <script type="text/javascript"> complete(); </script>
+</html>

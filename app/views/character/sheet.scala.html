@@ -1,0 +1,78 @@
+@(user: User, character: Character, sysname: Option[String])
+
+@import play.api.libs.json._
+
+@main(user) {
+
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/sheet.js")"></script>
+  <script type="text/javascript">
+
+    var npcdata   = @Html( character.info.toString );
+
+  </script>
+  @sysname.map { name =>
+  <script type="text/javascript">
+
+    var character = @Html( character.stat.toString );
+    var meta      = @Html( character.meta.toString );
+    var system    = @Html( Json.parse(Game.systemFile(name)).toString );
+
+  </script>
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/systems/" + name + ".js")"></script>
+  }
+  
+  <div style="padding-top: 5px; padding-left: 5px;" id="character_sheet">
+    <div>
+      @if(character.user_id == user.id.get) {
+        <div class="topright" id="control">
+          <span   class="texVisible">Visible:</span>
+          <input  class="setVisible" type="checkbox" @if(character.visible){ checked }></input>
+          <span   class="texPublic">Public:</span>
+          <input  class="setPublic"  type="checkbox" @if(character.public ){ checked }></input>
+          <button class="icon delete"></button>
+        </div>
+      }
+      @sysname.map { sys =>
+        <div style="display: inline-block; vertical-align: top;">
+          <h2>@character.name</h2>
+          <div id="@sys"></div>
+        </div>
+      }.getOrElse{
+        <h2>@character.name</h2>
+      }
+      <div id="dataSet">
+        <img class="picture" data-id="@character.id" height="400" id="pic" src="@character.imgUrl">
+        <div class="csection">
+          <div id="characterData">
+          </div>
+          @if(character.user_id == user.id.get) {
+            <button class="icon plus" id="newdata"></button>
+            <button class="icon enter" id="c_save"></button>
+          }
+        </div>
+        <div class="csection">
+          <div id="linkSet">
+            <p>Links:</p>
+            @for(char <- Character.getLinks(character.id.get)) {
+              <a class="association" href="@routes.Characters.display(char.id.get)">@char.name</a></br>
+            }
+          </div>
+          @if(character.user_id == user.id.get && character.visible) {
+            <button class="icon link" id="duplicate"></button>
+            <button class="icon plus" id="newlink"></button>
+          }
+        </div>
+      </div>
+    </div>
+    <h4>Notes:</h4>
+    <div id="noteSet" data-character="@character.id"></div>
+    <button class="icon addnote plus" id="newnote"></button>
+  </div>  
+  <script type="text/javascript">
+    $("#c_sheet").hide();
+  </script>
+  <div id="cover"></div>
+}
+
+
+

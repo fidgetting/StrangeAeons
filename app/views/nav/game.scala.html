@@ -1,0 +1,17 @@
+@(game: Game, user: User)
+
+<li data-game="@game.id" data-name="@game.name">
+  <span class="toggle"></span>
+  @if(game.master == user.id.get) {
+    <a href="@routes.Games.delete(game.id.get)">
+      <button class="icon delete grm"></button>
+    </a>
+  }
+  <a class="gameName" href="@routes.Application.game(game.name)">@game.name</a>
+  <ul id="@game.name.replace(" ", "")">
+    @for((_, _, char) <- game.characters.chars if(char.visible || char.user_id == user.id.get)) {
+    <li class="char@char.id.get" id="@char.minName" data-character="@char.id">
+      <a class="name" href="@routes.Characters.display(char.id.get)">@char.name</a>
+    </li>}
+  </ul>
+</li>

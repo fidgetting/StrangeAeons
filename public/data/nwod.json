@@ -1,0 +1,1700 @@
+{ "merits": {
+    "Architectural Attunment": {
+        "flat": true,
+        "value": 4
+    },
+    "Area of Expertise": {
+        "flat": true,
+        "value": 2
+    },
+    "Atavism": {
+        "flat": true,
+        "value": 1
+    },
+    "Barrister": {
+        "flat": true,
+        "value": 4
+    },
+    "Combat Awareness": {
+        "flat": true,
+        "value": 2
+    },
+    "Common Sense": {
+        "flat": true,
+        "value": 4
+    },
+    "Crafter's Sense": {
+        "flat": true,
+        "value": 3
+    },
+    "Danger Sense": {
+        "flat": true,
+        "value": 2
+    },
+    "Dead Reckoning": {
+        "flat": true,
+        "value": 1
+    },
+    "Eidetic Memory": {
+        "flat": true,
+        "value": 2
+    },
+    "Emotional Detachment": {
+        "flat": true,
+        "value": 1
+    },
+    "Encyclopedic Knowledge": {
+        "flat": true,
+        "value": 4
+    },
+    "EOD": {
+        "flat": true,
+        "value": 2
+    },
+    "Entheogenic Synesthesia": {
+        "flat": true,
+        "value": 1
+    },
+    "Good Time Management": {
+        "flat": true,
+        "value": 2
+    },
+    "Higher Calling": {
+        "flat": true,
+        "value": 2
+    },
+    "Holistic Awareness": {
+        "flat": true,
+        "value": 3
+    },
+    "Hypnotic Voice": {
+        "flat": true,
+        "value": 4
+    },
+    "Hypnosis": {
+        "flat": true,
+        "value": 3
+    },
+
+    "Informative 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Informative 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Interdisciplinary Specialty": {
+        "flat": true,
+        "value": 1
+    },
+    "Language": {
+        "flat": false,
+        "value": 5
+    },
+    "Lucid Dreamer": {
+        "flat": true,
+        "value": 1
+    },
+    "Lucid Dreaming": {
+        "flat": true,
+        "value": 2
+    },
+    "Make Do": {
+        "flat": true,
+        "value": 2
+    },
+    "Meditative Mind": {
+        "flat": true,
+        "value": 1
+    },
+    "Multi-Lingual": {
+        "flat": false,
+        "value": 5
+    },
+    "Murder Expert": {
+        "flat": true,
+        "value": 3
+    },
+    "Mythologist": {
+        "flat": true,
+        "value": 3
+    },
+    "Psychic Resistance": {
+        "flat": false,
+        "value": 3
+    },
+    "Rational Explanation": {
+        "flat": true,
+        "value": 4
+    },
+    "Scientist's Sense": {
+        "flat": true,
+        "value": 3
+    },
+    "Supernatural Lore": {
+        "flat": false,
+        "value": 5
+    },
+    "Technophile": {
+        "flat": false,
+        "value": 2
+    },
+    "Telltale Murder 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Telltale Murder 3": {
+        "flat": true,
+        "value": 3
+    },
+    "Tolerance for Biology": {
+        "flat": true,
+        "value": 1
+    },
+    "Trained Memory": {
+        "flat": true,
+        "value": 1
+    },
+    "Trained Observer": {
+        "flat": false,
+        "value": 3
+    },
+    "Tunnel Rat": {
+        "flat": false,
+        "value": 3
+    },
+    "Well-Traveled": {
+        "flat": true,
+        "value": 1
+    },
+    "Whispers": {
+        "flat": true,
+        "value": 1
+    },
+
+    "Ambidextrous": {
+        "flat": true,
+        "value": 3
+    },
+    "Armored Fighting 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Armored Fighting 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Athletic Dodge": {
+        "flat": true,
+        "value": 1
+    },
+    "Brawling Dodge": {
+        "flat": true,
+        "value": 1
+    },
+    "Demolisher": {
+        "flat": false,
+        "value": 2
+    },
+    "Disarm": {
+        "flat": true,
+        "value": 2
+    },
+    "Direction Sense": {
+        "flat": true,
+        "value": 1
+    },
+    "Entering Strike": {
+        "flat": true,
+        "value": 2
+    },
+    "Equipred Grappling": {
+        "flat": true,
+        "value": 2
+    },
+    "Fighting Finesse": {
+        "flat": true,
+        "value": 2
+    },
+    "Firearms Retention": {
+        "flat": true,
+        "value": 1
+    },
+    "Fast Reflexes": {
+        "flat": false,
+        "value": 2
+    },
+    "Fleet of Foot": {
+        "flat": false,
+        "value": 3
+    },
+    "Fresh Start": {
+        "flat": true,
+        "value": 1
+    },
+    "Giant": {
+        "flat": true,
+        "value": 4
+    },
+    "Ground and Pound": {
+        "flat": true,
+        "value": 2
+    },
+    "Gunslinger": {
+        "flat": true,
+        "value": 3
+    },
+    "Heavy Hands": {
+        "flat": true,
+        "value": 3
+    },
+    "Iron Stamina": {
+        "flat": false,
+        "value": 3
+    },
+    "Iron Stomach": {
+        "flat": true,
+        "value": 2
+    },
+    "Natural Immunity": {
+        "flat": true,
+        "value": 1
+    },
+    "Outdoorsman": {
+        "flat": true,
+        "value": 2
+    },
+    "Perfect Stillness": {
+        "flat": true,
+        "value": 1
+    },
+    "Quick Draw": {
+        "flat": true,
+        "value": 1
+    },
+    "Quick Healer": {
+        "flat": true,
+        "value": 4
+    },
+    "Shield-Bearer": {
+        "flat": true,
+        "value": 1
+    },
+    "Steady Driver": {
+        "flat": true,
+        "value": 2
+    },
+    "Strong Back": {
+        "flat": true,
+        "value": 1
+    },
+    "Strong Lungs": {
+        "flat": true,
+        "value": 3
+    },
+    "Student of the Blade": {
+        "flat": true,
+        "value": 1
+    },
+    "Stunt Driver": {
+        "flat": true,
+        "value": 3
+    },
+    "Stunt Rider": {
+        "flat": true,
+        "value": 3
+    },
+    "The Weapon at Hand": {
+        "flat": true,
+        "value": 2
+    },
+    "Toxin Resistance": {
+        "flat": true,
+        "value": 2
+    },
+    "Weaponry Dodge": {
+        "flat": true,
+        "value": 1
+    },
+    "Weapons to Empty Hands": {
+        "flat": true,
+        "value": 2
+    },
+    "Wheelman": {
+        "flat": true,
+        "value": 2
+    },
+
+    "Allies": {
+        "flat": false,
+        "value": 5
+    },
+    "Animal Companion": {
+        "flat": false,
+        "value": 4
+    },
+    "Anonymity 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Anonymity 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Armory": {
+        "flat": false,
+        "value": 5
+    },
+    "Barfly": {
+        "flat": true,
+        "value": 1
+    },
+    "Bureaucratic Navigator": {
+        "flat": true,
+        "value": 2
+    },
+    "Contacts": {
+        "flat": false,
+        "value": 5
+    },
+    "Decoracted": {
+        "flat": false,
+        "value": 5
+    },
+    "Deep Rapport": {
+        "flat": false,
+        "value": 5
+    },
+    "Fame": {
+        "flat": false,
+        "value": 3
+    },
+    "Fence": {
+        "flat": false,
+        "value": 3
+    },
+    "Friend": {
+        "flat": false,
+        "value": 5
+    },
+    "Ingratiating Wanderer": {
+        "flat": true,
+        "value": 2
+    },
+    "Inspiring": {
+        "flat": true,
+        "value": 4
+    },
+    "Luxury 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Luxury 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Mentor": {
+        "flat": false,
+        "value": 5
+    },
+    "New Identity 1": {
+        "flat": true,
+        "value": 1
+    },
+    "New Identity 2": {
+        "flat": true,
+        "value": 2
+    },
+    "New Identity 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Resources": {
+        "flat": false,
+        "value": 5
+    },
+    "Retainer": {
+        "flat": false,
+        "value": 5
+    },
+    "Shadow Bult Initation": {
+        "flat": false,
+        "value": 5
+    },
+    "Small Unit Tatics": {
+        "flat": true,
+        "value": 3
+    },
+    "Staff": {
+        "flat": false,
+        "value": 5
+    },
+    "Status": {
+        "flat": false,
+        "value": 5
+    },
+    "Striking Looks 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Striking Looks 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Sworn Officer": {
+        "flat": false,
+        "value": 5
+    },
+    "Trip Sitter": {
+        "flat": true,
+        "value": 3
+    },
+    "Unobtrusive": {
+        "flat": true,
+        "value": 3
+    },
+
+    "Cursed Item": {
+        "flat": false,
+        "value": 5
+    },
+    "Driver's Charm": {
+        "flat": false,
+        "value": 5
+    },
+    "Pleasing Aura": {
+        "flat": true,
+        "value": 3
+    },
+    "Relic Creator": {
+        "flat": true,
+        "value": 4
+    },
+    "Relic": {
+        "flat": false,
+        "value": 5
+    },
+    "Relic Analyst": {
+        "flat": true,
+        "value": 1
+    },
+    "Saintly": {
+        "flat": true,
+        "value": 3
+    },
+    "7th Son of 7th Son": {
+        "flat": true,
+        "value": 4
+    },
+    "Shadow Contacts": {
+        "flat": false,
+        "value": 5
+    },
+    "Shadowless Chambers": {
+        "flat": false,
+        "value": 5
+    },
+
+    "Adamantine Hand": {
+        "flat": false,
+        "value": 5
+    },
+    "Aggressive Striking": {
+        "flat": false,
+        "value": 5
+    },
+    "Aikido": {
+        "flat": false,
+        "value": 5
+    },
+    "Archery": {
+        "flat": false,
+        "value": 5
+    },
+    "Berserker": {
+        "flat": false,
+        "value": 5
+    },
+    "Boxing": {
+        "flat": false,
+        "value": 5
+    },
+    "Brute Force": {
+        "flat": false,
+        "value": 5
+    },
+    "Chain Weapons": {
+        "flat": false,
+        "value": 5
+    },
+    "Combat Marksmanship": {
+        "flat": false,
+        "value": 5
+    },
+    "Dirty Fighting": {
+        "flat": false,
+        "value": 5
+    },
+    "Dream Combat": {
+        "flat": false,
+        "value": 5
+    },
+    "Evasive Striking": {
+        "flat": false,
+        "value": 5
+    },
+    "Fencing": {
+        "flat": false,
+        "value": 5
+    },
+    "Filipino Martial Arts": {
+        "flat": false,
+        "value": 4
+    },
+    "Formation Tactics": {
+        "flat": false,
+        "value": 5
+    },
+    "Frenzied Assault": {
+        "flat": false,
+        "value": 5
+    },
+    "Grappling": {
+        "flat": false,
+        "value": 5
+    },
+    "Gladiatoral": {
+        "flat": false,
+        "value": 4
+    },
+    "Hedge Duelist": {
+        "flat": false,
+        "value": 5
+    },
+    "Iaido": {
+        "flat": false,
+        "value": 5
+    },
+    "Judo": {
+        "flat": false,
+        "value": 5
+    },
+    "Improvised Weaponry": {
+        "flat": false,
+        "value": 3
+    },
+    "Kendo": {
+        "flat": false,
+        "value": 4
+    },
+    "Krav Maga": {
+        "flat": false,
+        "value": 5
+    },
+    "Kung Fu": {
+        "flat": false,
+        "value": 5
+    },
+    "Langschwert": {
+        "flat": false,
+        "value": 5
+    },
+    "MAC": {
+        "flat": false,
+        "value": 5
+    },
+    "Multi-Limbed Combat": {
+        "flat": false,
+        "value": 4
+    },
+    "Muay Thai": {
+        "flat": false,
+        "value": 5
+    },
+    "Police Tactics": {
+        "flat": false,
+        "value": 5
+    },
+    "Qinna": {
+        "flat": false,
+        "value": 5
+    },
+    "Shurikenjutsu": {
+        "flat": false,
+        "value": 5
+    },
+    "Sniping": {
+        "flat": false,
+        "value": 5
+    },
+    "Sojutsu/Jukendo": {
+        "flat": false,
+        "value": 4
+    },
+    "Spetsnaz Knife Fighting": {
+        "flat": false,
+        "value": 4
+    },
+    "Staff Fighting": {
+        "flat": false,
+        "value": 3
+    },
+    "Swarm Tactics": {
+        "flat": false,
+        "value": 2
+    },
+    "Sword and Shield": {
+        "flat": false,
+        "value": 5
+    },
+    "Tooth and Claw": {
+        "flat": false,
+        "value": 5
+    },
+    "Two Weapons": {
+        "flat": false,
+        "value": 4
+    },
+    "Wolfpack": {
+        "flat": false,
+        "value": 4
+    },
+
+    "Haunt - Utility": {
+        "flat": false,
+        "value": 5
+    },
+    "Haunt - Fluidity": {
+        "flat": false,
+        "value": 5
+    },
+    "Haunt - Residue": {
+        "flat": false,
+        "value": 5
+    },
+
+    "Death Touched 1": {
+        "flat": true,
+        "value": 2
+    },
+    "Death Touched 2": {
+        "flat": true,
+        "value": 4
+    },
+
+    "Charm": {
+        "flat": true,
+        "value": 1
+    },
+    "Vanitas": {
+        "flat": true,
+        "value": 2
+    },
+    "Fetter": {
+        "flat": true,
+        "value": 3
+    },
+    "Deathmask": {
+        "flat": true,
+        "value": 4
+    },
+    "Memorabilia": {
+        "flat": true,
+        "value": 5
+    },
+
+    "Bad Breeding": {
+        "flat": false,
+        "value": 3
+    },
+    "Cacophony Listener 3": {
+        "flat": true,
+        "value": 3
+    },
+    "Cacophony Listener 5": {
+        "flat": true,
+        "value": 5
+    },
+    "Close Family": {
+        "flat": false,
+        "value": 3
+    },
+    "Distant Sympathy": {
+        "flat": true,
+        "value": 2
+    },
+    "Doll Face": {
+        "flat": true,
+        "value": 1
+    },
+    "Dream Visions": {
+        "flat": true,
+        "value": 3
+    },
+    "Ghost Eater": {
+        "flat": true,
+        "value": 3
+    },
+    "Good Breeding": {
+        "flat": false,
+        "value": 3
+    },
+    "Herd": {
+        "flat": false,
+        "value": 5
+    },
+    "Inherited Ghoul": {
+        "flat": true,
+        "value": 2
+    },
+    "Inherited Resistance 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Inherited Resistance 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Inhuman Resistance": {
+        "flat": true,
+        "value": 3
+    },
+    "Kindred Medium 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Kindred Medium 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Lordly Palette": {
+        "flat": false,
+        "value": 3
+    },
+    "Noble Heritage 2": {
+        "flat": true,
+        "value": 2
+    },
+    "Noble heritage 4": {
+        "flat": true,
+        "value": 4
+    },
+    "Occultation": {
+        "flat": false,
+        "value": 5
+    },
+    "Of Rose and Thorn": {
+        "flat": true,
+        "value": 4
+    },
+    "Reagent": {
+        "flat": false,
+        "value": 5
+    },
+    "Remnant of Clarity": {
+        "flat": false,
+        "value": 3
+    },
+    "Pack Blooded": {
+        "flat": true,
+        "value": 2
+    },
+    "Requiem Diary": {
+        "flat": false,
+        "value": 5
+    },
+    "Patron": {
+        "flat": false,
+        "value": 5
+    },
+    "Savage Kenning": {
+        "flat": true,
+        "value": 3
+    },
+    "Social Chameleon": {
+        "flat": false,
+        "value": 4
+    },
+    "Swarm Mind": {
+        "flat": true,
+        "value": 2
+    },
+    "Taste of Stange": {
+        "flat": true,
+        "value": 1
+    },
+    "Tenacious Consciousness": {
+        "flat": true,
+        "value": 2
+    },
+    "Tomb": {
+        "flat": false,
+        "value": 4
+    },
+    "Undead Menses": {
+        "flat": true,
+        "value": 3
+    },
+    "Vice over Virtue": {
+        "flat": true,
+        "value": 2
+    },
+    "Vitae Connoisseur": {
+        "flat": true,
+        "value": 1
+    },
+    "Voyeur 3": {
+        "flat": true,
+        "value": 3
+    },
+    "Voyeur 5": {
+        "flat": true,
+        "value": 5
+    },
+    "Zeal": {
+        "flat": true,
+        "value": 2
+    }
+},
+
+    "manifestations": {
+        "Boneyard": { },
+        "Caul": { },
+        "Curse": { },
+        "Marionette": { },
+        "Oracle": { },
+        "Rage": { },
+        "Shroud": { },
+        "Pit": { }
+    },
+
+    "keys": {
+        "Cold-Wind": { },
+        "Grave-Dirt": { },
+        "Pyre-Flame": { },
+        "Tear-Stained": { },
+        "Industrial": { },
+        "Passion": { },
+        "Phantasmal": { },
+        "Primeval": { },
+        "Stigmata": { },
+        "Stillness": { },
+        "Stygian": { }
+    },
+
+    "ceremonies": {
+        "Cigarette Dawn": {
+            "value": 1
+        },
+        "Final Vision": {
+            "value": 1
+        },
+        "Finding": {
+            "value": 1
+        },
+        "Krewe Binding": {
+            "value": 1
+        },
+        "One Last Song": {
+            "value": 1
+        },
+        "Pass On": {
+            "value": 1
+        },
+        "Reverse Bargain": {
+            "value": 1
+        },
+        "Speaker of the Dead": {
+            "value": 1
+        },
+
+        "Distant Vision": {
+            "value": 2
+        },
+        "Distant Voices": {
+            "value": 2
+        },
+        "Faces in Smoke": {
+            "value": 2
+        },
+        "Lifting the Scales": {
+            "value": 2
+        },
+        "Listening to the Spectral Howl": {
+            "value": 2
+        },
+        "Message from Beyond": {
+            "value": 2
+        },
+        "Mortis Mask": {
+            "value": 2
+        },
+        "Plasmic Manifestation": {
+            "value": 2
+        },
+        "Spectral Photography": {
+            "value": 2
+        },
+
+        "Dead Voices on Air": {
+            "value": 3
+        },
+        "Dedicate Charm": {
+            "value": 3
+        },
+        "The Devil's Bargen": {
+            "value": 3
+        },
+        "Ease the Path": {
+            "value": 3
+        },
+        "Finding the Crossroads": {
+            "value": 3
+        },
+        "Funerary Tools": {
+            "value": 3
+        },
+        "Lemure’s Lure": {
+            "value": 3
+        },
+        "Loosen the Coil": {
+            "value": 3
+        },
+        "Moment of Absolution": {
+            "value": 3
+        },
+        "Plumbing the Depths": {
+            "value": 3
+        },
+        "Quicken the Dead": {
+            "value": 3
+        },
+        "Reading the Echoes": {
+            "value": 3
+        },
+        "Warding Circle": {
+            "value": 3
+        },
+
+        "Bind Anchor": {
+            "value": 4
+        },
+        "Danse Macabre": {
+            "value": 4
+        },
+        "Ghost Drinker": {
+            "value": 4
+        },
+        "Ghostly Guardian": {
+            "value": 4
+        },
+        "Mending the Mortal Coil": {
+            "value": 4
+        },
+        "Warding the Household": {
+            "value": 4
+        },
+
+        "Crash the Gates": {
+            "value": 5
+        },
+        "Create Deathly Passage": {
+            "value": 5
+        },
+        "Dumb Supper": {
+            "value": 5
+        },
+        "Fetter’s Binding": {
+            "value": 5
+        },
+        "Sepulchral Gateway": {
+            "value": 5
+        },
+        "Spectral Captivity": {
+            "value": 5
+        },
+        "UnBinding": {
+            "value": 5
+        },
+        "Wings of the Moth": {
+            "value": 5
+        }
+    },
+
+    "disciplines": {
+        "Animalism": { },
+        "Auspex": { },
+        "Celerity": { },
+        "Dominate": { },
+        "Majesty": { },
+        "Nightmare": { },
+        "Obfuscate": { },
+        "Protean": { },
+        "Resilience": { },
+        "Vigor": { },
+
+        "Crúac": { },
+        "Theban Sorcery": { },
+
+        "Taurobolinun": { },
+        "Impurity": { }
+    },
+
+    "devotions": {
+        "22 Solid": 12,
+        "Abdo Cordis": 16,
+        "Arcane Sight": 10,
+        "Appalling Lure": 21,
+        "Army of One": 30,
+        "Aversion Curse": 12,
+        "Beast's Own": 10,
+        "Behind the Throne": 12,
+        "Beloved Pet": 25,
+        "Blessing of Captive Eye": 12,
+        "Blood from the Boards": 15,
+        "Blink": 5,
+        "Blood Shield": 39,
+        "Bobcat Climbing": 5,
+        "Body Colony": 18,
+        "Body of Will": 15,
+        "The Bottled Command": 6,
+        "Brute Cannot Betray": 15,
+        "Butcher's Hook": 6,
+        "Call of Courage": 12,
+        "Camoflauge": 12,
+        "Child of the Night": 6,
+        "Churchtower Gaze": 10,
+        "Claws of Amphisbaena": 15,
+        "Cleansing Impression": 15,
+        "Compel Spirit": 12,
+        "Consent of the Magna Master": 9,
+        "The Court Concurs": 15,
+        "Cutting of the String": 15,
+        "Dauntless Spirit": 8,
+        "Defiant Child": 18,
+        "Destructive Might": 30,
+        "Discerning Palate": 9,
+        "Disquieting Mien": 6,
+        "Dodona": 24,
+        "Draught of Revelation": 10,
+        "Encode Vitae": 12,
+        "Enliven the Flesh": 8,
+        "Exegesis": 18,
+        "Eyes of Blood": 6,
+        "Eyes of the Beast": 6,
+        "Eyes of teh Dragon": 10,
+        "Faking It": 15,
+        "Flesh of Iron": 12,
+        "Fool the Sleeping Beast": 21,
+        "Forced March": 12,
+        "Free Your Blood": 15,
+        "Gargoyle's Might": 27,
+        "Gimme 50": 20,
+        "Glimpse of the Abyss": 27,
+        "Glory of Ra": 30,
+        "Guardian Vigil": 10,
+        "Hair Trigger": 15,
+        "Hekau": 18,
+        "Hidden Agenda": 24,
+        "Hive Induction": 21,
+        "Hive Nexus Gestalt": 24,
+        "Honeycomb Heart": 12,
+        "Hounds of Blood": 15,
+        "Husk": 6,
+        "Ignore": 9,
+        "Immutable Mind": 8,
+        "Indomitable Aura": 15,
+        "Instant Adoration": 12,
+        "Instantaneous Transformation": 18,
+        "Iron Muscles": 8,
+        "Iron Facade": 10,
+        "Knowing the Stranger": 21,
+        "Langour's Denial": 24,
+        "Lessons of the Steel": 12,
+        "Liquid Memory": 15,
+        "Love Like Blood": 10,
+        "Makeover": 0,
+        "Man to Beast": 21,
+        "Menteia": 15,
+        "Mask of the Beast": 15,
+        "Masked Blood": 6,
+        "Medusa's Scales": 15,
+        "Memory Theft": 28,
+        "Mercurial Form": 27,
+        "Mesmeric Taint": 12,
+        "The Message": 10,
+        "Message in a Bottle": 15,
+        "The Mesthusaleh Effect": 0,
+        "Mock Mind": 0,
+        "Monster's Call": 15,
+        "Night Life": 10,
+        "Oath of Blood Knives": 10,
+        "Occulted Spirit": 15,
+        "Palinode": 21,
+        "Partial Transformation": 15,
+        "Picture Perfect": 33,
+        "Playing the Part": 15,
+        "Poinsoned Chalice": 18,
+        "Preemptive Reflex": 24,
+        "Predator's Camouflage": 9,
+        "Predatory Growl": 7,
+        "Quicken Sight": 5,
+        "Quicken the Slumbering Vitae": 13,
+        "Regeneration": 24,
+        "The Rejected Malady": 9,
+        "Repulsive Mein": 18,
+        "The Restoration of Things Logs": 21,
+        "Rhino's Hide": 20,
+        "Rime of Salt": 12,
+        "The Ritual of Nourishment": 12,
+        "Repulsive Vapor": 18,
+        "Royal Jelly": 5,
+        "Sample the Earth": 10,
+        "Sanctum of Fear": 12,
+        "Sanguine Stance": 18,
+        "Sanguine Strength": 6,
+        "Scent of the Beast": 20,
+        "Searing Wind": 18,
+        "See the Reflected Form": 12,
+        "Seek the Brahmim": 9,
+        "Shadow Heart": 14,
+        "The Shadow's Revelation": 15,
+        "Shout": 10,
+        "Sleepwalker": 15,
+        "Small Witness": 6,
+        "Soma": 24,
+        "Song of Bonded Blood": 15,
+        "Song of Serenity": 15,
+        "Spirit Sight": 5,
+        "Stalwart Heart": 8,
+        "Stalwart Servent": 15,
+        "Sting": 18,
+        "Strength from Pain": 18,
+        "Sudden Strength": 6,
+        "Susurrus": 10,
+        "Swarm Control": 15,
+        "Syncopy": 18,
+        "Timed Message": 15,
+        "Tears of Blood": 15,
+        "This Awful Grip": 9,
+        "Torpid Awareness": 9,
+        "Torpid Awareness (Advanced)": 30,
+        "Touch of Deprivation": 21,
+        "Trackless Step": 12,
+        "Transgression of Attis": 33,
+        "Trans. of the Starved": 20,
+        "Undiminished Rage": 18,
+        "Undying Familiar": 15,
+        "Unflinching Eye": 5,
+        "Unnatural Contortion": 15,
+        "Unseen Master": 15,
+        "Vitae Bloat": 9,
+        "Verdical Tongue": 12,
+        "The Warding Flesh": 21,
+        "Wiched Grasp": 9,
+        "Will to Endure": 12,
+        "Witch Lights": 9,
+        "Wolf Man": 15,
+
+        "The Gathering Spirits": 30
+    },
+
+    "rituals": {
+        "The Angle's Touch": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Blood Scourge": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Celibacy": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Crown of Thorns": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Hauberk of Blood": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Messenger's Mark": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Paladin's Absolution": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Sinner Song": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Theban Inscription": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Vitae Reliquary": {
+            "dot": "1",
+            "discipline": "Theban Sorcery"
+        },
+        "Balancing of Four Humors": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Blood Witness": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Boyar's Caul": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Confidence in Adversity": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Drops of Destiny": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Fires of Inspiration": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Genius Loci": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Pangs of Prosperina": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Pythian Renewal": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Rigor Mortis": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Taste of Knowledge": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Visage of the Crone": {
+            "dot": "1",
+            "discipline": "Crúac"
+        },
+        "Bird of Sin": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Curse of Babel": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Damned Radiance": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Liar's Plauge": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Prison of Denial": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Resistance of Discipline": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Sanctity": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Wings of the Seraph": {
+            "dot": "2",
+            "discipline": "Theban Sorcery"
+        },
+        "Amemet's Pursuit": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Barrier of Blood": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Cheval": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Harai": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Hawthorn Barrier": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "The Heliolater's Warning": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "The Hydra's Vitae": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Imperious Call": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Maiden Skin": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Path of Thorns": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Prey's Blood": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Soul's Work": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Succulent Budoes": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Wisdom of the Soul": {
+            "dot": "2",
+            "discipline": "Crúac"
+        },
+        "Blandishment of Sin": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Blood Fire": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Lash Beyond Death": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Legionnaire's Blessing": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Malediction of Despair": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Micah's Hope": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Pharaoh's Paces": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Scrivener's Eye": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Vision of the Will": {
+            "dot": "3",
+            "discipline": "Theban Sorcery"
+        },
+        "Beloved Deodand": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Deflection of Wooden Doom": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Final Service of the Slave": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Flower of Demeter": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "The Hand of Seth": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "The Mother's Blessing": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Rain": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Servant of the Hidden Realms": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Song of the Blood": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Taste of Destiny": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Tiamat's Offering": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Tickblood": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Touch of the Morrigan": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Veiled Curse": {
+            "dot": "3",
+            "discipline": "Crúac"
+        },
+        "Call of Amoniel": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Display of the Beast": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Gift of Lazarus": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Mark of the Damned": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Sacred Haven": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Song of the Prey": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Spear of Faith": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Stigmata": {
+            "dot": "4",
+            "discipline": "Theban Sorcery"
+        },
+        "Blade of Tu'At": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Bleeding the Tarantula": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Blood Price": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Eternal Guardian of the Dark Moon": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Eye of the Norn": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Fount of Wisdom": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Mask of Blood": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Sacrifice of Odin": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "The Thrashing of Apep's Coils": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Willful Vitae": {
+            "dot": "4",
+            "discipline": "Crúac"
+        },
+        "Damned's Day": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "Fires of Vengeance": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "Imprecation of Sin": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "The Martyr's Miracle": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "Night of Hell": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "Rain of Blood": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "Transubstantiation": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "Wrathful Judgement": {
+            "dot": "5",
+            "discipline": "Theban Sorcery"
+        },
+        "A Child of the Stones": {
+            "dot": "5",
+            "discipline": "Crúac"
+        },
+        "As One": {
+            "dot": "5",
+            "discipline": "Crúac"
+        },
+        "Blood Blight": {
+            "dot": "5",
+            "discipline": "Crúac"
+        },
+        "Crone's Renewal": {
+            "dot": "5",
+            "discipline": "Crúac"
+        },
+        "Curse of the Ahasverus": {
+            "dot": "5",
+            "discipline": "Crúac"
+        },
+        "Feeding the Crone": {
+            "dot": "5",
+            "discipline": "Crúac"
+        },
+        "The Rite of Going Fourth By Day": {
+            "dot": "5",
+            "discipline": "Crúac"
+        },
+        "Roving Hut": {
+            "dot": "5",
+            "discipline": "Crúac"
+        }
+    },
+
+    "SkillGroups": {
+        "mental": ["Academics", "Computers", "Crafts", "Investigation", "Medicine", "Occult", "Politics", "Religion", "Science", "Warfare"],
+        "physical": ["Athletics", "Brawl", "Firearms", "Larceny", "Ride", "Stealth", "Survival", "Weaponry"],
+        "social": ["Animal Ken", "Empathy", "Expression", "Intimidation", "Persuasion", "Socialize", "Streetwise", "Subterfuge"]
+    },
+
+    "PossibleTraits": [
+        "merits",
+        "disciplines",
+        "manifestations",
+        "keys",
+        "ceremonies",
+        "specialties"
+    ],
+
+    "Starting": {
+        "meta": {
+            "type": "nwod",
+            "skills" : {
+                "mental" :   ["Academics", "Computers", "Crafts", "Investigation", "Medicine", "Occult", "Politics", "Science", "Warfare"],
+                "physical" : ["Athletics", "Brawl", "Firearms", "Larceny", "Ride", "Stealth", "Survival", "Weaponry"],
+                "social" :   ["Animal Ken", "Empathy", "Expression", "Intimidation", "Persuasion", "Socialize", "Streetwise", "Subterfuge"]
+            },
+            "alternateDisplay": [
+                "merits",
+                "specialties"
+            ],
+            "discounted": [ ]
+        },
+        "data": {},
+        "Character": {
+            "id": 0,
+            "xp_total": 0,
+            "name": "",
+            "vice": "",
+            "virtue": "",
+            "will power": 0,
+            "xp_diff": 0,
+            "initiative": 2,
+            "potency": 1,
+            "size": 5,
+            "morality": 7,
+            "attributes": {
+                "Strength": 1,
+                "Dexterity": 1,
+                "Resolve": 1,
+                "Intelligence": 1,
+                "Presence": 1,
+                "Wits": 1,
+                "Stamina": 1,
+                "Composure": 1,
+                "Manipulation": 1
+            },
+            "skills": {
+                "Investigation": 0,
+                "Computers": 0,
+                "Occult": 0,
+                "Politics": 0,
+                "Academics": 0,
+                "Medicine": 0,
+                "Crafts": 0,
+                "Science": 0,
+                "Brawl": 0,
+                "Larceny": 0,
+                "Weaponry": 0,
+                "Firearms": 0,
+                "Survival": 0,
+                "Athletics": 0,
+                "Stealth": 0,
+                "Ride": 0,
+                "Socialize": 0,
+                "Streetwise": 0,
+                "Subterfuge": 0,
+                "Expression": 0,
+                "Intimidation": 0,
+                "Persuasion": 0,
+                "Empathy": 0,
+                "Animal Ken": 0
+            },
+            "merits": {},
+            "specialties": {},
+            "derangements": {},
+            "health": {
+                "bashing": 0,
+                "lethal": 0,
+                "agrivated": 0,
+                "grevious": 0
+            }
+        }
+    }
+}

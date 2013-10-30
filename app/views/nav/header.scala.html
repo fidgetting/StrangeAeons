@@ -1,0 +1,19 @@
+@(user: User)
+
+<header class="topbar">
+  <h1 class="fill">
+    <div id="username">
+      <a id="c_name" href="@routes.Application.index">@user.name</a>
+      
+      <div id="search">
+        @helper.form(action = routes.Application.search()) {
+          <input type="search" name="term" value="" placeholder="Search Characters?">
+        }
+        <a class="btn primary profile" href="@routes.Admin.profile()">Profile</a>
+        <a class="btn primary logout"  href="@routes.Auth.logout()">Logout</a>
+      </div>
+    </div>
+  </h1>
+</header>
+
+

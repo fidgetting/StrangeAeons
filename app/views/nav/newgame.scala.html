@@ -1,0 +1,24 @@
+@(user: User)
+
+<div>
+  <div class="box" id="newgame" data-userid="@user.id">
+    <div class="topright">
+      <button class="icon enter">
+      <button class="icon delete"></button>
+    </div>
+    <input class="item" type="text" name="name" id="gamename">
+    <select class="item" id="gamesystem">
+      @for(system <- Character.listSystems) {
+        <option value="@system">@system</option>
+      }
+    </select>
+    <select class="item userselect" id="gameuser" multiple="multiple">
+      @for(other <- User.not(user)) {
+        <option value="@other.id">@other.name</option>
+      }
+    </select>
+    <ul id="userlist">
+    
+    </ul>
+  </div>
+</div>

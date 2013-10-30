@@ -1,0 +1,32 @@
+@(getter: User, users: (Seq[User], Seq[User]), game: Game)
+
+@userbox(user: User, ingame: Boolean) = {
+  <div class="user" data-game="@game.id.get" data-user="@user.id.get">
+    <div class="topright">
+      <button class="icon @if(ingame) {delete remove} else {enter add}"></button>
+    </div>
+    <p class="name">@user.name</p>
+    <p>@user.email</p>
+  </div>
+}
+
+<div class="box" id="users">
+  <h2>Users</h2>
+  <div class="inline">
+    <div class="scrolls" id="ingame">
+    @for(user <- users._1) {
+      @userbox(user, true)
+    }
+    </div>
+  </div>
+  <div class="inline">
+    <div class="scrolls" id="outgame">
+    @for(user <- users._2) {
+      @userbox(user, false)
+    }
+    </div>
+  </div>
+</div>
+
+
+

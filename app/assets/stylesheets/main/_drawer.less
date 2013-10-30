@@ -1,0 +1,57 @@
+// -----------------------------------
+// PROJECTS DRAWER
+// -----------------------------------
+// author: mda@zenexity.com - 2011
+// -----------------------------------
+body {
+  & > nav {
+    padding: 0;
+    background: @drawerBackground;
+    border-right: 1px solid @layoutBorderColor;
+  }
+}
+
+#games {
+  > li {
+    position: relative;
+    padding: 10px 5px 5px 25px;
+    li {
+      position: relative;
+      padding: 0 0 0 15px;
+    }
+    .toggle {
+      content: " ";
+      position: absolute;
+      left: 8px;
+      top: 12px;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+      background: url(/assets/images/icons/drawer.folder.png) 0 0 no-repeat;
+    }
+    &.closed {
+      >ul {
+        display: none;
+      }
+      .toggle {
+        background-position: 0 -20px;
+      }
+    }
+  }
+  
+  .grm {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+  }
+}
+
+#newgame {
+  .item {
+    margin: 5px;
+    width: 150px;
+  }
+  
+  
+}

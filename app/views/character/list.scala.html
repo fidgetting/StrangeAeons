@@ -1,0 +1,22 @@
+@(getter: User, characters: CharacterSet, game: Option[Game] = None)
+
+@main(getter, true) {
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/list.js")"></script>
+  <script type="text/javascript">
+    var characters =  @Html(characters.json(getter, game).toString);
+  </script>
+  @if(getter.isGm) {
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/game.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/npc.js")"></script>
+    <script type="text/javascript">var game_data = {"aspects":[],"links":{},"ethnicity":[]} </script>
+    @views.html.gm.game(getter)
+  }
+  <div id="characterSet">
+    @views.html.character.create(getter)
+    <select id="groupSelect">
+      <option value="none">none</option>
+    </select>
+  </div>
+  <div id="groupSet">
+  </div>
+}

@@ -1,0 +1,30 @@
+@(getter: User, characters: CharacterSet, users: (Seq[User], Seq[User]), game: Game)
+
+@main(getter, false) {
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/list.js")"></script>
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/game.js")"></script>
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/npc.js")"></script>
+  <script type="text/javascript">
+    var characters =  @Html(characters.json(getter, Option(game)).toString);
+    var game_data  =  @Html(game.s_data);
+    var game_id    =  @game.id;
+    var game_name  = "@game.name";
+  </script>
+  @views.html.gm.game(getter)
+  <div id="characterSet">
+    @views.html.character.create(getter)
+    <select id="groupSelect">
+      <option value="none">none</option>
+    </select>
+  </div>
+  <div id="groupSet">
+  </div>
+  <div id="gmui">
+    <div class="inline">
+      @views.html.gm.npc()
+    </div>
+    <div class="inline">
+      @views.html.gm.users(getter, users, game)
+    </div>
+  </div>
+}

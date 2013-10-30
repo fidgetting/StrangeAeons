@@ -1,0 +1,180 @@
+// -----------------------------------
+// HEADER
+// -----------------------------------
+// author: fidgetting@gmail.com - 2013
+// -----------------------------------
+
+@base_width : 85px;
+@base_height: 20px;
+
+.height_sub(@value, @sub) { height: (@base_height * @value) - @sub; }
+.height    (@value)       { height: (@base_height * @value);        }
+.width_sub (@value, @sub) { width : (@base_width  * @value) - @sub; }
+.width     (@value)       { width : (@base_width  * @value);        }
+
+.size   (@width, @height) { .width(@width); .height(@height); }
+.maxsize { width: 100%; height: 100%; }
+.disbox { margin: 2px 5px; padding: 2px 5px; }
+
+
+#fate {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .3);
+
+  .section {
+    vertical-align: top;
+
+    .sechead {
+      background-color: black;
+      color: white;
+      border-radius: 10px 0px;
+      font-size: 16px;
+      padding: 1px 10px;
+      margin: 0px 3px;
+      position: relative;
+
+      .add {
+        position: absolute;
+        right: 1px;
+        top: 2px;
+      }
+
+      .del {
+        position: absolute;
+        right: 20px;
+        top: 2px;
+      }
+    }
+
+  }
+
+  .Aspects {
+    margin-top: 8px;
+
+    .aspect {
+      .width(3);
+      .disbox;
+      border: 1px solid black;
+      cursor: pointer;
+      vertical-align: top;
+      margin-top   : 4px;
+      margin-bottom: 4px;
+    }
+
+    .aspectIn {
+      margin: 0px 5px;
+      .width_sub(3, -8);
+    }
+  }
+
+  .Skills {
+    margin-top: 6px;
+
+    .sheader {
+      .width(1);
+      .disbox;
+      color: #AAA;
+      display: inline-block;
+      text-align: right;
+      cursor: pointer;
+    }
+
+    .skill {
+      .width(1);
+      .disbox;
+      display: inline-block;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+
+    .empty {
+      border: 1px solid #AAA;
+      cursor: pointer;
+    }
+
+    .selected {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+      background-color: #FFFFC7;
+    }
+
+    .skillIn {
+      margin: 0px 5px;
+      .width_sub(1, -8)
+    }
+  }
+
+  .Stories {
+    .width_sub(5.6, -90);
+    maring: 2px 5px;
+  }
+
+  .Stunts {
+    .width(4);
+    min-height: 30px;
+    border: 1px solid black;
+    margin: 2px 5px;
+
+    .stunt {
+      position: relative;
+      font-size: 15px;
+      .disbox;
+
+      .delb {
+        position: absolute;
+        left: 4px;
+        top: 0px;
+        opacity: 0.0;
+        &:hover {
+          opacity: 1.0;
+        }
+      }
+    }
+
+    .stuntIn {
+      .width(3.8);
+      margin: 4px 6px;
+    }
+
+  }
+
+  .Stress {
+    .width(4);
+    margin: 2px 5px;
+
+    .stressbox {
+      margin: 4px 5px;
+      cursor: pointer;
+    }
+
+    .cross0 { background: url(/assets/images/icons/Fate1.png) 0 -20px no-repeat; }
+    .none0  { background: url(/assets/images/icons/Fate1.png) 0 0px no-repeat; }
+    .cross1 { background: url(/assets/images/icons/Fate2.png) 0 -20px no-repeat; }
+    .none1  { background: url(/assets/images/icons/Fate2.png) 0 0px no-repeat; }
+    .cross2 { background: url(/assets/images/icons/Fate3.png) 0 -20px no-repeat; }
+    .none2  { background: url(/assets/images/icons/Fate3.png) 0 0px no-repeat; }
+    .cross3 { background: url(/assets/images/icons/Fate4.png) 0 -20px no-repeat; }
+    .none3  { background: url(/assets/images/icons/Fate4.png) 0 0px no-repeat; }
+    .cross4 { background: url(/assets/images/icons/Fate5.png) 0 -20px no-repeat; }
+    .none4  { background: url(/assets/images/icons/Fate5.png) 0 0px no-repeat; }
+  }
+
+  .Consequences {
+    .width_sub(5.6, -92);
+
+    .conbox {
+      display: inline-block;
+      border: 1px solid black;
+      .width(3);
+      margin : 4px 5px;
+      padding: 2px 5px;
+      cursor: pointer;
+    }
+
+    .consIn {
+      .width_sub(3, -8);
+      margin : 4px 5px;
+    }
+  }
+}

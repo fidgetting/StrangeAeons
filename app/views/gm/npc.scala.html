@@ -1,0 +1,44 @@
+@()
+
+<div id="npcCreate">
+  <div class="box" id="npc">
+    <div class="topright">
+      <button class="icon enter"></button>
+    </div>
+    <div class="inline">
+      <select id="names" size="10" class="names">  
+      </select>
+      <select id="eth" size="10" class="names ethnicity">
+        <option value="weighted">weighted</option>
+        <option value="random">random</option>
+      </select>
+      <textarea id="note"></textarea>
+    </div>
+    <table class="aspects">
+      <tbody>
+        <tr>
+          <td><input type="checkbox" class="fix" data-id="name"></td>
+          <td>Name</td>
+          <td id="npc_name" class="right"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="fix" data-id="gender"></td>
+          <td>Gender</td>
+          <td id="gender" class="right"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="fix" data-id="adjective"></td>
+          <td>Ethnicity</tgenderd>
+          <td id="ethnicity" class="right"></td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="fix" data-id="adjective"></td>
+          <td>Adjective</tgenderd>
+          <td id="adjective" class="right"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

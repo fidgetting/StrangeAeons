@@ -1,0 +1,32 @@
+@(admin: User, user: User)
+
+@get_game(game: Game) = {
+  <a class="cGame" href="@routes.Application.game(game.name)">@game.name</a>
+}
+
+<div class="inline">
+  <div class="box user" data-id="@user.id.get">
+    <div class="topright">
+      <button class="icon delete"></button>
+    </div>
+    <span>
+      <a id="user_email" href="@routes.Application.user(user.name)"><b>@user.name</b></a>
+      <a id="user_name"  href="@routes.Application.user(user.name)">@user.email</a>
+      <select class="permisions">
+        <option value="0" @if(user.basic){ selected }>Basic</option>
+        <option value="1" @if(user.gm   ){ selected }>Game Master</option>
+        <option value="2" @if(user.admin){ selected }>Administrator</option>
+      </select>
+      <div class="scrolls" id="additional" style="display: none;">
+        <div>
+          @for(character <- Character(user)) {
+            <div class="userChar">
+              <a class="cName" href="@routes.Characters.display(character.id.get)">@character.name</a>
+              @get_game(Game(character.game_id))
+            </div>
+          }
+        </div>
+      </div>
+    </span>
+  </div>
+</div>

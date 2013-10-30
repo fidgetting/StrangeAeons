@@ -1,0 +1,41 @@
+@(user: User)
+
+@import play.api.libs.json._
+
+<div style="display: none;" id="gameCreate">
+  <div class="topright">
+    <button class="icon enter save"></button>
+    <button class="icon delete finished"></button>
+  </div>
+  <div style="display: inline-table;">
+    <div class="box" id="willbe">
+      <input class="header" type="text" value="" placeholder="Game Name" id="gameName">
+      <div>
+        <select id="system">
+          <option value="">-- system --</option>
+          @for(system <- Character.listSystems) {
+          <option value=@system>@system</option>
+          }
+        </select>
+      </div>
+      <div class="scrolls gamebox">
+        <div id="current"></div>
+        <button class="icon plus create"></button>
+      </div>
+      <div class="scrolls gamebox">
+        <div id="links"></div>
+        <button class="icon plus clink"></button>
+      </div>
+    </div>
+  </div>
+  <div style="display: inline-table;">
+    <div class="box" id="options">
+      <input class="header" type="text" value="" placeholder="Search" style="margin-bottom: 25px;">
+      <div class="scrolls srcbox">
+        <div id="available">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

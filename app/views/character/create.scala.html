@@ -1,0 +1,38 @@
+@(user: User)
+
+<div class="inline" id="createContainer">
+  <div class="box character create" id="characterCreate">
+    <img
+      src="@Character.nonUrl"
+      width="75"
+      height="81"
+      alt="character pic">
+    <span>
+      <p>New Character</p>
+    </span>
+  </div>
+  <div class="box character create" id="characterInput" style="display: none">
+    <img
+      src="@Character.nonUrl"
+      width="75"
+      height="81"
+      alt="character pic">
+    <div class="topright">
+      <button class="icon enter" ></button>
+      <button class="icon delete"></button>
+    </div>
+    <span>
+     <input type="text" id="name">
+      <select class="createLink system" id="system">
+        <option value="">-- system --</option>
+        @for(system <- Character.listSystems) {
+        <option value=@system>@system</option>
+        }
+      </select>
+      <select class="createLink" id="game">
+        <option value="">-- game --</option>
+      </select>
+    </span>
+  </div>
+</div>
+

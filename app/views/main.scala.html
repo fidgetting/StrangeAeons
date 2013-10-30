@@ -1,0 +1,30 @@
+@(user: User, list: Boolean = false)(content: Html)
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Character Sheet: @user.name</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.0.3.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
+    <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/libs.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/main.js")"></script>
+  </head>
+  <body id="body">
+  
+    @views.html.nav.header(user)
+    @views.html.nav.sidebar(user, list)
+    <section id="main">
+      @content
+    </section>
+    
+  </body>
+  
+  <script type="text/javascript"> complete(); </script>
+</html>
+
+
+
+

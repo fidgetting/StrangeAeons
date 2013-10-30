@@ -1,0 +1,74 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default path will go to the users characters
+GET           /                                 controllers.Application.index
+GET           /home                             controllers.Application.home
+GET           /search                           controllers.Application.search(term: String ?= "")
+POST          /upload                           controllers.Application.upload(id: Long)
+
+GET           /character                        controllers.Characters.display(id: Long)
+DELETE        /character                        controllers.Characters.delete(id: Long)
+PUT           /character                        controllers.Characters.save(name: String, id: Long)
+GET           /character/json/:id               controllers.Characters.character(id: Long)
+PUT           /character/data                   controllers.Characters.update(id: Long, data: String)
+GET           /character/create                 controllers.Characters.create
+PUT           /character/take                   controllers.Characters.take(id: Long)
+PUT           /character/link                   controllers.Characters.link(from: Long, to: Long)
+PUT           /character/duplicate              controllers.Characters.duplicate(id: Long)
+PUT           /character/public                 controllers.Characters.setPublic(id: Long, value: Boolean)
+PUT           /character/visible                controllers.Characters.setVisible(id: Long, value: Boolean)
+
+GET           /note                             controllers.Notes.list(char: Long)
+DELETE        /note                             controllers.Notes.delete(id: Long)
+PUT           /note                             controllers.Notes.save(id: Long, cont: String, pub: Boolean)
+PUT           /note/update                      controllers.Notes.update(id: Long, cont: String, pub: Boolean)
+
+GET           /game/list/:id                    controllers.Application.game(id: String)
+POST          /game                             controllers.Games.save(name: String)
+GET           /game/delete                      controllers.Games.delete(id: Long)
+GET           /game/new                         controllers.Games.newGame
+GET           /game/system/:system              controllers.Games.games(system: String)
+POST          /game/add                         controllers.Games.add(game_id: Long, user_id: Long)
+POST          /game/remove                      controllers.Games.remove(game_id: Long, user_id: Long)
+GET           /game/characters                  controllers.Games.characters(id: Long)
+
+GET           /gm/data                          controllers.GameMaster.data
+GET           /gm/aspects                       controllers.GameMaster.aspects
+GET           /gm/npcui                         controllers.GameMaster.npcui(game: String)
+PUT           /gm/aspect                        controllers.GameMaster.aspect(name: String, data: String)
+
+GET           /system                           controllers.Characters.system(name: String)
+
+# Get the users available in the database
+GET           /user                             controllers.Application.user(id: String)
+
+# Administrative controllers
+GET           /admin/users                      controllers.Admin.users
+POST          /admin/permisions                 controllers.Admin.permisions(id: Long, value: Int)
+DELETE        /admin/user                       controllers.Admin.delete(id: Long)
+GET           /profile                          controllers.Admin.profile
+
+# Authentication
+GET           /login                            controllers.Auth.login
+POST          /login                            controllers.Auth.authenticate
+GET           /logout                           controllers.Auth.logout
+GET           /signup                           controllers.Auth.signup
+POST          /register                         controllers.Auth.register
+POST          /change                           controllers.Auth.change
+GET           /validate/:user                   controllers.Auth.validate(user: String)
+GET           /openid/:service                  controllers.Auth.openid(service: String)
+GET           /openidValidate                   controllers.Auth.openidValidate
+GET           /openidSwitch/:service            controllers.Auth.openid_switch(service: String)
+GET           /openidSwitchValidate             controllers.Auth.openidValidate_switch
+
+GET           /login/taken                      controllers.Auth.taken(possible: String)
+GET           /validate/:hash                   controllers.Auth.validate(hash: String)
+
+GET           /assets/javascripts/routes        controllers.Application.javascriptRoutes
+
+# Map static resources from the /public folder to the /assets URL path
+GET           /assets/*file                     controllers.Assets.at(path="/public", file)
+GET           /storage/:name                    controllers.Application.file(name: String)
+

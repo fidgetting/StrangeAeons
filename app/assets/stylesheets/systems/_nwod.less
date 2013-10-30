@@ -1,0 +1,421 @@
+// -----------------------------------
+// HEADER
+// -----------------------------------
+// author: fidgetting@gmail.com - 2013
+// -----------------------------------
+
+#nwod {
+  padding:       10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+
+  .select {
+    width: 186px;
+  }
+  
+  .dot {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      color: #0F0;
+    }
+  }
+  
+  .zero {
+    color: white;
+    &:hover {
+      color: blue;
+    }
+  }
+  
+  .right {
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+  }
+  
+  .header {
+    margin: 2px;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    position: relative;
+
+    .setTraits {
+      position: absolute;
+      top: 3px;
+      right: 5px;
+    }
+  }
+  
+  .scroll {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-right: 5px;
+    height: inherit;
+    display: inline-block;
+  }
+
+  .delctn {
+    position: relative;
+  }
+
+  .delbtn {
+    position: absolute;
+    left: 0px;
+    top: -2px;
+    opacity: 0.0;
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+    
+  ::-webkit-scrollbar { 
+    width:9px;
+    height:9px;
+  }
+    
+  ::-webkit-scrollbar-button:start:decrement { 
+    display: block;
+    height: 0;
+    background-color: transparent;
+  }
+    
+  ::-webkit-scrollbar-button:end:increment { 
+    display: block;
+    height: 0;
+    background-color: transparent;
+  }
+    
+  ::-webkit-scrollbar-track-piece {
+    background-color: #FAFAFA;
+    -webkit-border-radius: 0;
+    -webkit-border-bottom-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+  }
+    
+  ::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #999;
+    -webkit-border-radius: 8px;
+  }
+  
+  .auxiliary {
+    display: inline-block;
+    vertical-align: top;
+    width: 42%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .section {
+    padding: 1px;
+    background-color: black;
+    border-radius: 10px 0px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+
+    .border_bottom {
+      border-bottom: 1px solid black;
+    }
+    
+    .border_right {
+      border-right: 1px solid black;
+    }
+    
+    .body {
+      padding: 8px;
+      background-color: white;
+      border-radius: 8px 0px 8px 0px;
+    }
+    
+    .dotset {
+      display: inline-block;
+    }
+  }
+  
+  
+  .attributes {
+    width: 650px;
+    margin-bottom: 5px;
+
+    .attribute {
+      display: inline-block;
+      padding: 5px;
+      position: relative;
+      width: 160px;
+      margin-left: 8px;
+    }
+    
+    .label {
+      display: inline-block;
+      padding: 5px;
+      position: relative;
+      margin-left: 8px;
+      font-style: italic;
+      font-size: 9pt;
+
+      div {
+        text-align: right;
+      }
+    }
+  }
+  
+  .skills {
+    width: 180px;
+    display: inline-table;
+    margin-right: 5px;
+
+    .skill {
+      padding: 5px;
+      position: relative;
+      width: 155px;
+      margin-bottom: 10px;
+    }
+
+    .skillType {
+      text-align: center;
+      font-weight: bold;
+      font-size: 13pt;
+    }
+
+    .skillSub {
+      text-align: center;
+      font-style: italic;
+      font-size: 8pt;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .traits {
+    width: 461px;
+    display: inline-table;
+  
+    .trait {
+      padding: 1px;
+      position: relative;
+      width: 230px;
+      background-color: black;
+      border-radius: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .trait_body {
+      background-color: white;
+      border-radius: 8px;
+      padding: 4px;
+      font-size: 9pt;
+      min-height: 10px;
+    }
+    
+    .traitName {
+      text-align: center;
+      padding: 5px;
+      font-weight: bold;
+      color: white;
+      position: relative;
+    }
+    
+    .add {
+      position: absolute;
+      right: 3px;
+      top: 3px;
+    }
+  }
+  
+  .traitcheck {
+    position: relative;
+    width: 100px;
+  }
+  
+  .addCheckbox {
+    position: absolute;
+    right: 0px;
+    top: 1px;
+  }
+  
+  .auxiliarytrait {
+    margin: 5px;
+    width: 100%;
+    margin-bottom: 18px;
+
+    .auxName {
+      text-align: center;
+      font-size: 12pt;
+    }
+  }
+
+  .specialties {
+    display: inline;
+    list-style: none;
+
+    li { display: inline; }
+    li:after { content: ", "; }
+    li:last-child:after { content: ""; }
+  }
+
+  .Rituals {
+
+    @borderColor: #AAA;
+
+    .dotDisplay {
+      margin: 10px 5px;
+      padding: 0px 5px 5px 5px;
+      width:201px;
+      min-height: 10px;
+      border: 1px solid @borderColor;
+      border-radius: 5px;
+
+      span {
+        position: relative;
+        top: -7px;
+        background-color: white;
+        color: @borderColor;
+        padding: 0px 5px;
+      }
+    }
+  }
+  
+  #health {
+
+    .boxes {
+      text-align: center;
+    }
+    
+    .hbox {
+      display: inline;
+      width: 12px;
+      height: 12px;
+      margin: 1px;
+    }
+    
+    .none      { background: url(/assets/images/icons/wod_HealthBox.png) 0   0px no-repeat; }
+    .bashing   { background: url(/assets/images/icons/wod_HealthBox.png) 0 -13px no-repeat; }
+    .lethal    { background: url(/assets/images/icons/wod_HealthBox.png) 0 -26px no-repeat; }
+    .agrivated { background: url(/assets/images/icons/wod_HealthBox.png) 0 -39px no-repeat; }
+    .grevious  { background: url(/assets/images/icons/wod_HealthBox.png) 0 -52px no-repeat; }
+  }
+  
+  #will {
+
+    .boxes {
+      text-align: center;
+    }
+    
+    .wbox {
+      display: inline;
+      width: 12px;
+      height: 12px;
+      margin: 1px;
+    }
+    
+    .available { background: url(/assets/images/icons/wod_HealthBox.png) 0   0px no-repeat; }
+    .marked    { background: url(/assets/images/icons/wod_HealthBox.png) 0 -26px no-repeat; }
+  }
+  
+  #blood {
+
+    .boxes {
+      text-align: center;
+    }
+    
+    .bbox {
+      display: inline;
+      width: 12px;
+      height: 12px;
+      margin: 1px;
+    }
+    
+    .empty { background: url(/assets/images/icons/wod_BloodBox.png) 0   0px no-repeat; }
+    .full  { background: url(/assets/images/icons/wod_BloodBox.png) 0 -13px no-repeat; }
+    .blank { background: url(/assets/images/icons/wod_BloodBox.png) 0 -26px no-repeat; }
+  }
+  
+  #potency {
+
+    .boxes {
+      position: relative;
+      text-align: center;
+    }
+    
+    .right {
+      position: relative;
+      right: auto;
+    }
+  }
+
+  #morality {
+
+    .pair {
+      position: relative;
+      text-align: center;
+    }
+
+    .dot {
+      display: inline-block;
+      margin-left: 8px;
+      margin-right: 3px;
+    }
+
+    .insanity {
+      border-bottom: 1px solid black;
+      display: inline-block;
+      width: 150px;
+      font-size: 8pt;
+      padding: 0;
+      cursor: pointer;
+
+      input {
+        height: 10px;
+        text-align: center;
+        font-size: 8pt;
+      }
+    }
+
+    .noText {
+      color: white;
+    }
+  }
+  
+  #calculated {
+    position: absolute;
+    bottom: 0px;
+
+    .pair {
+      position: relative;
+      margin-bottom: 2px;
+      font-size: 9pt;
+    }
+    
+    .key {
+      display: inline-block;
+      margin-left: 8px;
+    }
+    
+    .value {
+      border-bottom: 1px solid black;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 10px;
+      width: 45%;
+      text-align: center;
+
+      input {
+        width: 90px;
+        height: 10px;
+        text-align: center;
+        font-size: 9pt;
+      }
+    }
+    
+    .lock {
+      position: absolute;
+      bottom: -25px;
+      right: -12px;
+    }
+
+    .experience {
+      cursor: pointer;
+    }
+  }
+}
+

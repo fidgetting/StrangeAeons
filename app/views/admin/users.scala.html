@@ -1,0 +1,10 @@
+@(admin: User, users: Seq[User])
+
+@main(admin, false) {
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/admin.js")"></script>
+  <div id="userSet">
+   @for(user <- users) {
+     @views.html.admin.box(admin, user)
+   }
+  </div>
+}

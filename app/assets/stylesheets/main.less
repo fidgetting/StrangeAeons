@@ -1,0 +1,69 @@
+// -----------------------------------
+// MAIN
+// -----------------------------------
+// author: fidgetting@gmail.com - 2013
+// -----------------------------------
+
+@import 'libs/_reset.less';
+@import 'libs/_mate.less';
+@import 'libs/_theme.less';
+
+body {
+  background: @mainBackground;
+  color: @mainColor;
+  font: @defFont;
+  -webkit-font-smoothing: antialised;
+  -webkit-user-select: none;
+}
+
+a {
+  color: @links;
+  text-decoration: none;
+  &:hover {
+    color: @linksHover;
+  }
+}
+
+h2 {
+  font-size: 16pt;
+  font-wieght: bold;
+}
+
+#cover {
+  float: left;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 10000px;
+  width:  10000px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, .93);
+  display: none;
+}
+
+input[type="checkbox"] {
+  margin: 0px 0px 3px 4px;
+  vertical-align: middle;
+}
+
+.picture {
+  cursor: pointer;
+}
+
+.tooltip {
+  display: block;
+}
+
+// --------------------------- IMPORTS
+@import 'main/_layout.less';
+@import 'main/_widgets.less';
+@import 'character/_box.less';
+@import 'character/_sheet.less';
+@import 'character/_group.less';
+@import 'main/_header.less';
+@import 'main/_drawer.less';
+@import 'main/_npc.less';
+@import 'main/_game.less';
+@import 'main/_admin.less';
+@import 'systems/_fate.less';
+@import 'systems/_nwod.less';

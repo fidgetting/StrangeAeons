@@ -1,0 +1,19 @@
+{ "Starting" : {
+    "meta" : {
+      "type" : "fate"
+    },
+    "Character" : {
+      "id" : 0,
+      "refresh" : 3,
+      "name" : "",
+      "aspects"      : [ "", "", "", "", ""],
+      "stunts"       : [ ],
+      "skills"       : [ [ ], [ ], [ ], [ ], [ ] ],
+      "consequences" : [ "", "", "", "" ],
+      "stress" : {
+        "physical" : { "max" : 2, "filled" : [false, false] },
+        "mental"   : { "max" : 2, "filled" : [false, false] }
+      }
+    }
+  }
+}
