@@ -39,7 +39,7 @@ case class Character(
   def rest_json(getter: User) = Json.obj(
     "id"      -> id.get,
     "owned"   -> (getter == user),
-    "master"  -> (getter.id == game.master),
+    "master"  -> (getter.id.get == game.master),
     "name"    -> Json.obj(
       "name"    -> name,
       "link"    -> routes.Characters.display(id.get).toString),

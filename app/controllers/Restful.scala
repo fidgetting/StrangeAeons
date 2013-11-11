@@ -30,7 +30,7 @@ object Restful extends Controller with Secured {
     "error" ->  msg
   )
 
-  val starting_regex = """(\w+):all""".r
+  val starting_regex = """(\w+):(.+)""".r
 
   def get(Type: String, id_in: Option[Long], name_in: Option[String]) = withAuth { user => implicit request =>
     Ok(try {
@@ -43,19 +43,21 @@ object Restful extends Controller with Secured {
         case ("Game",      None, Some(name)) => wrap(user, Game     (name))
         case ("Character", None, Some(name)) => wrap(user, Character(name))
 
-        case ("System",    None, Some(starting_regex(name))) =>
-          Json.obj("code" -> 0, "success" -> Json.parse(Game.systemFile(name)))
+        case ("System",    None, Some(starting_regex(name, sub))) =>
+          Json.obj("code" -> 0, "success" -> (sub.split(":") foldLeft Json.parse(Game.systemFile(name)))
+            { case (curr, next) => curr \ next })
         case ("System",    None, Some(name)) =>
-          Json.obj("code" -> 0, "success" -> Json.parse(Game.systemFile(name)) \ "Starting")
+          Json.obj("code" -> 0, "success" -> Json.parse(Game.systemFile(name)))
 
-        case _ => error(1, s"Invalid type combination: $Type, $id_in, $name_in")
+        case _ => error(2, s"Invalid type combination: ($Type, $id_in, $name_in)")
       }
     } catch {
       case e : FileNotFoundException => error(3, s"System(${name_in.get}) not found")
       case e : RuntimeException      => error(4, s"$Type(${(id_in, name_in) match {
         case (Some(in),  None)  => s"id = $in"
-        case (None, Some(name)) => s"name = $name" }}) not found")
-      case e : Throwable        => error(2, e.toString)
+        case (None, Some(name)) => s"name = $name"
+        case _                  => "???" }}) not found")
+      case e : Throwable        => error(1, e.toString)
     })
   }
 
