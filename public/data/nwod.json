@@ -674,6 +674,19 @@
         "value": 5
     },
 
+    "Haven - Location": {
+        "flat": false,
+        "value": 3
+    },
+    "Haven - Size": {
+        "flat": false,
+        "value": 3
+    },
+    "Haven - Security": {
+        "flat": false,
+        "value": 3
+    },
+
     "Death Touched 1": {
         "flat": true,
         "value": 2

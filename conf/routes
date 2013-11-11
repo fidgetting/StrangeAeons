@@ -50,6 +50,9 @@ POST          /admin/permisions                 controllers.Admin.permisions(id:
 DELETE        /admin/user                       controllers.Admin.delete(id: Long)
 GET           /profile                          controllers.Admin.profile
 
+# Restful API
+GET           /get                              controllers.Restful.get(Type: String, id: Option[Long], name: Option[String])
+
 # Authentication
 GET           /login                            controllers.Auth.login
 POST          /login                            controllers.Auth.authenticate

@@ -40,7 +40,7 @@ case class User(
     password: String,
     perm    : Permisions,
     valid   : Boolean,
-    openid  : Boolean) {
+    openid  : Boolean) extends Restful {
   
   lazy val basic = perm match {
     case Basic         => true
@@ -68,6 +68,16 @@ case class User(
     case Administrator => true
     case _             => false
   }
+
+  def rest_json(getter: User) = Json.obj(
+    "id"    -> id.get,
+    "name"  -> name,
+    "email" -> email,
+    "games" -> (for(game <- Game.master(this)) yield Json.obj(
+      "id"   -> game.id.get,
+      "name" -> game.name
+    ))
+  )
   
 }
 
@@ -185,7 +195,7 @@ object User {
       SQL(
         """
           select * from users
-            where users.email = {email};
+            where users.email = {email} or users.name = {email};
         """
       ).on(
         'email -> email

@@ -4,9 +4,10 @@
 ################################################################################
 
 getCharacter = (data) ->
+  log data
   img = $("""<img class="picture charIcon" data-id="#{data.id}" src="#{data.picture}" alt="character pic">""")
   res = $($.parseHTML("""
-    <div class="inline">
+    <div class="inline showEntity">
       <div class="box character">
         <div class="topright"></div>
         <span>

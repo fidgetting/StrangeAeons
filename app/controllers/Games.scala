@@ -57,7 +57,7 @@ object Games extends Controller with Secured {
   def delete(id: Long) = isMaster(id) { _ => _ =>
     Game.delete(id)
     
-    Redirect(routes.Application.home)
+    Application.Home
   }
   
   def add(game_id: Long, user_id: Long) = isMaster(game_id) { _ => _ =>

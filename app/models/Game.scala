@@ -11,19 +11,31 @@ import Play.current
 import anorm._
 import SqlParser._
 
+import controllers._
+
 case class Game(
     id    : Pk[Long] = NotAssigned,
     name  : String,
     master: Long,
     system: String,
-    s_data: String) {
+    s_data: String) extends Restful {
   
   lazy val characters =
     Game.characters(id.get)
   
   lazy val data =
     Json.parse(s_data)
-  
+
+  def rest_json(getter: User) = Json.obj(
+    "id"         -> id.get,
+    "name"       -> name,
+    "system"     -> system,
+    "characters" -> (for(char <- Game.characters(this)) yield Json.obj(
+      "id" -> char.id.get,
+      "name" -> char.name
+    ))
+  )
+
 }
 
 case class AspectInfo(
@@ -194,6 +206,21 @@ object Game {
       ) as (User.parseAll *))
     }
   }
+
+  def characters(game: Game): Seq[Character] = {
+    DB.withConnection {implicit connection =>
+      SQL(
+        """
+          select * from games
+            left join characters on characters.game_id = games.id
+            where games.id = {id}
+            order by characters.id;
+        """
+      ).on(
+        'id -> game.id.get
+      ).as(Character.parse *)
+    }
+  }
   
   def apply(id: Long): Game =  {
     DB.withConnection { implicit connection =>
@@ -218,6 +245,21 @@ object Game {
       ).on(
         'name -> name
       ).as(Game.parse.single)
+    }
+  }
+
+  def apply(user: User): Seq[Game] = {
+    DB.withConnection { implicit connection =>
+      SQL(
+        """
+          select games.* from games
+            left join gameassociation on gameassociation.game_id = games.id
+            where gameassociation.user_id = {id};
+        """
+      ).on(
+        'id -> user.id.get
+      ).as(Game.parse *)
+
     }
   }
   
@@ -259,6 +301,19 @@ object Game {
       ).on (
         'name -> name
       ).as (scalar[Boolean].single))
+    }
+  }
+
+  def master(user: User): Seq[Game] = {
+    DB.withConnection { implicit connection =>
+      SQL(
+        """
+          select * from games
+            where master = {id};
+        """
+      ).on(
+        'id -> user.id.get
+      ).as(Game.parse *)
     }
   }
   

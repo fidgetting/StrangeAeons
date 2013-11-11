@@ -6,21 +6,25 @@ import play.api._
 import db._
 import libs._
 import Play.current
-import json.Json
+import json._
 
 import anorm._
 import SqlParser._
 
+import controllers._
+
 case class Character(
-    id     : Pk[Long],
-    name   : String,
-    created: Date,
-    user_id: Long,
-    game_id: Long,
-    data   : String,
-    picture: Option[String],
-    public : Boolean = false,
-    visible: Boolean = true) {
+    id      : Pk[Long],
+    name    : String,
+    created : Date,
+    user_id : Long,
+    game_id : Long,
+    data    : String,
+    _picture: Option[String],
+    public  : Boolean = false,
+    visible : Boolean = true) extends Restful {
+
+  def picture = _picture.getOrElse("nonPerson.png")
   
   lazy val json = Json.parse(data)
   lazy val stat = json \ "Character"
@@ -28,7 +32,28 @@ case class Character(
   lazy val info = json \ "data"
   
   lazy val minName = name.replace(" ", "")
-  
+
+  lazy val user = User(user_id)
+  lazy val game = Game(game_id)
+
+  def rest_json(getter: User) = Json.obj(
+    "id"      -> id.get,
+    "owned"   -> (getter == user),
+    "master"  -> (getter.id == game.master),
+    "name"    -> Json.obj(
+      "name"    -> name,
+      "link"    -> routes.Characters.display(id.get).toString),
+    "user"    -> Json.obj(
+      "name"    -> user.name,
+      "link"    -> routes.Application.user(user.name).toString,
+      "id"      -> user.id.get),
+    "game"    -> Json.obj(
+      "name"    -> game.name,
+      "link"    -> routes.Application.game(game.name).toString,
+      "id"      -> game.id.get),
+    "picture" -> imgUrl,
+    "data"    -> json)
+
   def formatedDate =
     Character.dateFormat.format(created)
   
@@ -39,8 +64,7 @@ case class Character(
       if(idx < seq.size) Option(seq(idx)) else None
   }
   
-  def imgUrl =
-    controllers.Application.storage.url(picture.getOrElse("nonPerson.png"), 100)
+  def imgUrl = controllers.Application.storage.url(picture, 100)
   
 }
 
@@ -88,6 +112,19 @@ object Character {
       ).as(User.parseAll *))
     }
   }
+
+  def list(user: User): Seq[Character] = {
+    DB.withConnection { implicit connection =>
+      SQL(
+        """
+          select * from characters
+            where user_id = {user};
+        """
+      ).on(
+        'user -> user.id
+      ).as(Character.parse *)
+    }
+  }
   
   def apply(id: Long) = {
     DB.withConnection { implicit connection =>
@@ -114,20 +151,39 @@ object Character {
       ).as(Character.parse *)
     }
   }
+
+  def apply(name: String) = {
+    DB.withConnection { implicit connection =>
+      SQL(
+        """
+          select * from characters
+            where name = {name};
+        """
+      ).on(
+        'name -> name
+      ).as(Character.parse.single)
+    }
+  }
   
-  def insert(character: Character): Character = {
-    val starting = Game.starting(character.game_id)
-    val data = Json.obj(
-      "meta"      -> (starting \ "meta"),
-      "data"      -> character.json,
-      "Character" -> (starting \ "Character"))
+  def insert(character: Character,
+             min: Option[JsValue],
+             din: Option[JsValue],
+             sin: Option[JsValue]): Character = {
+    lazy val starting = Game.starting(character.game_id)
+    lazy val meta     = min.getOrElse(starting \ "meta")
+    lazy val data     = din.getOrElse(Json.obj())
+    lazy val stats    = sin.getOrElse(starting \ "Character")
+    val info = Json.obj(
+      "meta"      -> meta,
+      "data"      -> data,
+      "Character" -> stats)
 
     DB.withConnection { implicit connection =>
       SQL(
         """
           insert into characters
             (name ,  user_id ,  game_id ,  data ,  picture ) values (
-            {name}, {user_id}, {game_id}, {data}, {picture}
+            {name}, {user_id}, {game_id}, {info}, {picture}
           )
         """
       ).on(
@@ -135,7 +191,7 @@ object Character {
         'created -> character.created,
         'user_id -> character.user_id,
         'game_id -> character.game_id,
-        'data    -> Json.stringify(data),
+        'info    -> Json.stringify(info),
         'picture -> character.picture
       ).executeUpdate
     }

@@ -87,7 +87,9 @@ object Application extends Controller with Secured {
         
         GameMaster.data, GameMaster.npcui, GameMaster.aspects, GameMaster.aspect,
         
-        Admin.permisions, Admin.delete
+        Admin.permisions, Admin.delete,
+
+        Restful.get
       )
     ).as("text/javascript")
   }

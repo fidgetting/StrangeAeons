@@ -6,7 +6,7 @@ import play.api._
 import mvc._
 import data._
 import libs._
-import templates._
+
 import Forms._
 import Play._
 
@@ -47,8 +47,10 @@ object Characters extends Controller with Secured {
   def save(name: String, game_id: Long) = inGame(game_id) { user => implicit request =>
     def sForm = Form(
       tuple (
-        "data"  -> text,
-        "note"  -> text
+        "meta"   -> optional(text),
+        "data"   -> optional(text),
+        "stats"  -> optional(text),
+        "note"   -> text
       )
     )
 
@@ -56,15 +58,17 @@ object Characters extends Controller with Secured {
       { case with_error =>
         BadRequest(html.character.list(user, User.list(user)))
       },
-      { case (data, note) =>
-        val nc = Character.insert(Character(
-          NotAssigned, name, new Date(), user.id.get, game_id, data, None))
+      { case (meta, data, stats, note) =>
+        val nc = Character.insert(
+          Character(NotAssigned, name, new Date(), user.id.get, game_id, "{}", None),
+          meta  map (Json.parse(_)),
+          data  map (Json.parse(_)),
+          stats map (Json.parse(_)))
         Note.add(Note(NotAssigned, user.id.get, nc.id.get, note, false))
 
         Ok(Json.obj(
           "id"   -> nc.id.get,
-          "name" -> nc.name,
-          "html" -> html.character.box(user, user, Game(nc.game_id), nc).toString
+          "name" -> nc.name
         ))
       }
     )
