@@ -7,7 +7,7 @@
       <button class="icon delete grm"></button>
     </a>
   }
-  <a class="gameName" href="@routes.Application.game(game.name)">@game.name</a>
+  <a class="gameName" href="@routes.Application.game(game.id.get)">@game.name</a>
   <ul id="@game.name.replace(" ", "")">
     @for((_, _, char) <- game.characters.chars if(char.visible || char.user_id == user.id.get)) {
     <li class="char@char.id.get" id="@char.minName" data-character="@char.id">

@@ -25,7 +25,7 @@ DELETE        /note                             controllers.Notes.delete(id: Lon
 PUT           /note                             controllers.Notes.save(id: Long, cont: String, pub: Boolean)
 PUT           /note/update                      controllers.Notes.update(id: Long, cont: String, pub: Boolean)
 
-GET           /game/list/:id                    controllers.Application.game(id: String)
+GET           /game                             controllers.Application.game(id: Long)
 POST          /game                             controllers.Games.save(name: String)
 GET           /game/delete                      controllers.Games.delete(id: Long)
 GET           /game/new                         controllers.Games.newGame

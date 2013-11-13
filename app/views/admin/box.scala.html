@@ -1,7 +1,7 @@
 @(admin: User, user: User)
 
 @get_game(game: Game) = {
-  <a class="cGame" href="@routes.Application.game(game.name)">@game.name</a>
+  <a class="cGame" href="@routes.Application.game(game.id.get)">@game.name</a>
 }
 
 <div class="inline">
