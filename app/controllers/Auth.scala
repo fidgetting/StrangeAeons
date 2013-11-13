@@ -144,7 +144,7 @@ object Auth extends Controller with Secured {
           Redirect(routes.Application.index).withSession(Security.username -> email)
         } else {
           User.insert(email, name, "", true)
-          User.setValidated(User(email))
+          User.setValidated(User.byEmail(email))
           Redirect(routes.Application.index).withSession(Security.username -> email)
         }
 
@@ -214,7 +214,7 @@ trait Secured {
       if(!User.exists(user)) {
         Action(Auth.newlogin.flashing("error" -> s"Invalid username: $user"))
       }  else {
-        Action(bodyParser)(request => f(User(user))(request))
+        Action(bodyParser)(request => f(User.byEmail(user))(request))
       }
     }
   }

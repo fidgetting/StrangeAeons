@@ -17,12 +17,17 @@ trait Restful {
 
 object Restful extends Controller with Secured {
 
-  def wrap(getter: User, obj: Restful): JsObject = Json.obj(
+  def wrap(getter: User, obj: Restful): JsValue = Json.obj(
     "code"    -> 0,
     "success" -> Json.obj(
       "id"      -> obj.id.get,
       "body"    -> obj.rest_json(getter)
     )
+  )
+
+  def wrap(getter: User, objs: Seq[Restful]): JsValue = Json.obj(
+    "code" -> 0,
+    "success" -> objs.map(_.rest_json(getter))
   )
 
   def error(code: Long, msg: String): JsObject = Json.obj(

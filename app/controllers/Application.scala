@@ -58,13 +58,13 @@ object Application extends Controller with Secured {
     list(name, "", "")
   }
   
-  def game(name: String) = withAuth { user => implicit request =>
-    val game = Game(name)
+  def game(id: Long) = withAuth { user => implicit request =>
+    val game = Game(id)
     
     Ok(if(Game.isMaster(game.id.get)(user)) {
-      html.gm.list(user, Character.list("", name, ""), User.userSets(user, game), game)
+      html.gm.list(user, Character.list(game), User.userSets(user, game), game)
     } else {
-      html.character.list(user, Character.list("", name, ""), Option(game))
+      html.character.list(user, Character.list(game), Option(game))
     })
   }
   

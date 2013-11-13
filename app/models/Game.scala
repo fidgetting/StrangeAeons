@@ -235,7 +235,7 @@ object Game {
     }
   }
   
-  def apply(name: String): Game = {
+  def apply(name: String): Seq[Game] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
@@ -244,7 +244,7 @@ object Game {
         """
       ).on(
         'name -> name
-      ).as(Game.parse.single)
+      ).as(Game.parse *)
     }
   }
 

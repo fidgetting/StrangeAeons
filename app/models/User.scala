@@ -91,7 +91,7 @@ case class CharacterSet(val chars: Seq[(User, Game, Character)]) {
       "min"     -> char.minName,
       "info"    -> char.info,
       "user"    -> Json.obj("name" -> user.name, "link" -> routes.Application.user(user.name).toString),
-      "game"    -> Json.obj("name" -> game.name, "link" -> routes.Application.game(game.name).toString),
+      "game"    -> Json.obj("name" -> game.name, "link" -> routes.Application.game(game.id.get).toString),
       "link"    -> routes.Characters.display(char.id.get).toString,
       "state"   -> (
         if     (getter.id.get == char.user_id                     ) { "owned" }
@@ -190,7 +190,7 @@ object User {
     }
   }
   
-  def apply(email: String): User = {
+  def apply(email: String): Seq[User] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
@@ -199,7 +199,7 @@ object User {
         """
       ).on(
         'email -> email
-      ).as(User.parse.single)
+      ).as(User.parse *)
     }
   }
   
@@ -212,6 +212,19 @@ object User {
         """
       ).on(
         'id -> id
+      ).as(User.parse.single)
+    }
+  }
+
+  def byEmail(email: String): User = {
+    DB.withConnection { implicit connection =>
+      SQL(
+        """
+          select * from users
+            where users.email = {email} or users.name = {email};
+        """
+      ).on(
+        'email -> email
       ).as(User.parse.single)
     }
   }

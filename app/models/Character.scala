@@ -49,7 +49,7 @@ case class Character(
       "id"      -> user.id.get),
     "game"    -> Json.obj(
       "name"    -> game.name,
-      "link"    -> routes.Application.game(game.name).toString,
+      "link"    -> routes.Application.game(game.id.get).toString,
       "id"      -> game.id.get),
     "picture" -> imgUrl,
     "data"    -> json)
@@ -113,16 +113,20 @@ object Character {
     }
   }
 
-  def list(user: User): Seq[Character] = {
+  def list(game: Game): CharacterSet = {
     DB.withConnection { implicit connection =>
-      SQL(
+      CharacterSet(SQL(
         """
           select * from characters
-            where user_id = {user};
+            left join users on characters.user_id = users.id
+            left join games on characters.game_id = games.id
+            where games.id = {id}
+            order by characters.name;
         """
       ).on(
-        'user -> user.id
-      ).as(Character.parse *)
+        'id -> game.id.get
+      ).as(User.parseAll *)
+      )
     }
   }
   
@@ -152,7 +156,7 @@ object Character {
     }
   }
 
-  def apply(name: String) = {
+  def apply(name: String): Seq[Character] = {
     DB.withConnection { implicit connection =>
       SQL(
         """
@@ -161,7 +165,7 @@ object Character {
         """
       ).on(
         'name -> name
-      ).as(Character.parse.single)
+      ).as(Character.parse *)
     }
   }
   
