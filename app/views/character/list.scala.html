@@ -1,9 +1,9 @@
-@(getter: User, characters: CharacterSet, game: Option[Game] = None)
+@(getter: User, characters: Seq[Character], game: Option[Game] = None)
 
 @main(getter, true) {
   <script type="text/javascript" src="@routes.Assets.at("javascripts/list.js")"></script>
   <script type="text/javascript">
-    var characters =  @Html(characters.json(getter, game).toString);
+    var characters =  @Html(Character.toJson(getter, characters).toString);
   </script>
   @if(getter.isGm) {
     <script type="text/javascript" src="@routes.Assets.at("javascripts/game.js")"></script>
@@ -13,10 +13,10 @@
   }
   <div id="characterSet">
     @views.html.character.create(getter)
-    <select id="groupSelect">
-      <option value="none">none</option>
-    </select>
   </div>
+  <select id="groupSelect">
+    <option value="none">none</option>
+  </select>
   <div id="groupSet">
   </div>
 }

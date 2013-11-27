@@ -191,9 +191,9 @@ object Game {
     ret
   }
   
-  def characters(id: Long): CharacterSet = {
+  def characters(id: Long): Seq[Character] = {
     DB.withConnection { implicit connection =>
-      CharacterSet(SQL(
+      SQL(
         """
           select * from characters
             left join users on characters.user_id = users.id
@@ -203,7 +203,7 @@ object Game {
         """
       ) on (
         'id -> id
-      ) as (User.parseAll *))
+      ) as (Character.parse *)
     }
   }
 

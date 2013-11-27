@@ -58,7 +58,7 @@ object Application extends Controller with Secured {
     list(name, "", "")
   }
   
-  def game(id: Long) = withAuth { user => implicit request =>
+  def game(id: Long) = inGame(id) { user => _ =>
     val game = Game(id)
     
     Ok(if(Game.isMaster(game.id.get)(user)) {

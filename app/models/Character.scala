@@ -36,10 +36,14 @@ case class Character(
   lazy val user = User(user_id)
   lazy val game = Game(game_id)
 
-  def rest_json(getter: User) = Json.obj(
+  def rest_json(getter: User): JsObject =
+    rest_json(getter, true)
+
+  def rest_json(getter: User, include_data: Boolean): JsObject = Json.obj(
     "id"      -> id.get,
     "owned"   -> (getter == user),
     "master"  -> (getter.id.get == game.master),
+    "info"    -> info,
     "name"    -> Json.obj(
       "name"    -> name,
       "link"    -> routes.Characters.display(id.get).toString),
@@ -52,7 +56,7 @@ case class Character(
       "link"    -> routes.Application.game(game.id.get).toString,
       "id"      -> game.id.get),
     "picture" -> imgUrl,
-    "data"    -> json)
+    "data"    -> (if(include_data) json else Json.obj()))
 
   def formatedDate =
     Character.dateFormat.format(created)
@@ -72,6 +76,9 @@ object Character {
   
   def nonUrl =
     controllers.Application.storage.url("nonPerson.png", 100)
+
+  def toJson(getter: User, in: Seq[Character]): JsValue =
+    JsArray(for(c <- in) yield c.rest_json(getter, false))
   
   def parse: RowParser[Character] = {
     get[Pk[Long]]      ("characters.id"     ) ~
@@ -88,12 +95,12 @@ object Character {
     }
   }
   
-  def list(filter: String): CharacterSet =
+  def list(filter: String): Seq[Character] =
     list(filter, filter, filter)
   
-  def list(user_filter: String, game_filter: String, character_filter: String): CharacterSet = {
+  def list(user_filter: String, game_filter: String, character_filter: String): Seq[Character] = {
     DB.withConnection { implicit connection =>
-      CharacterSet(SQL(
+       SQL(
         """
           select * from characters
             left join users on characters.user_id = users.id
@@ -109,13 +116,13 @@ object Character {
         'user_filter      -> user_filter,
         'game_filter      -> game_filter,
         'character_filter -> character_filter
-      ).as(User.parseAll *))
+      ).as(Character.parse *)
     }
   }
 
-  def list(game: Game): CharacterSet = {
+  def list(game: Game) = {
     DB.withConnection { implicit connection =>
-      CharacterSet(SQL(
+      SQL(
         """
           select * from characters
             left join users on characters.user_id = users.id
@@ -125,8 +132,7 @@ object Character {
         """
       ).on(
         'id -> game.id.get
-      ).as(User.parseAll *)
-      )
+      ).as(Character.parse *)
     }
   }
   
