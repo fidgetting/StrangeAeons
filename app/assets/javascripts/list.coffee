@@ -4,14 +4,13 @@
 ################################################################################
 
 getCharacter = (data) ->
-  log data
   img = $("""<img class="picture charIcon" data-id="#{data.id}" src="#{data.picture}" alt="character pic">""")
   res = $($.parseHTML("""
     <div class="inline showEntity">
       <div class="box character">
         <div class="topright"></div>
         <span>
-          <a id="c_name" href="#{data.link}"><b>#{data.name}</b></a>
+          <a id="c_name" href="#{data.name.link}"><b>#{data.name.name}</b></a>
           <a class="gameLink" href="#{data.user.link}">#{data.user.name}</a>
           <a class="gameLink" href="#{data.game.link}">#{data.game.name}</a>
         </span>
@@ -23,9 +22,9 @@ getCharacter = (data) ->
     navigator.picture(ev)  
   res.find(".character").prepend(img)
   
-  btn = if data.state == "owned"
+  btn = if data.owned
     $("""<button class="icon delete"</button>""")
-  else if data.state == "take"
+  else if data.master
     $("""<button class="icon enter"</button>""")
   else
     undefined
@@ -161,8 +160,7 @@ class Character extends Backbone.View
     jsRoutes.controllers.Characters.delete(@data.id).ajax
       success: (data) =>
         $("##{@data.min}").remove()
-        #@el.animate({width: 'toggle'}, => @el.remove())
-        @el.remove();
+        @el.animate({width: 'toggle'}, => @el.remove())
       error: (err) ->
 
 class Group extends Backbone.View
@@ -227,15 +225,15 @@ class CreateView extends Backbone.View
       data: { data: "{}", note: "New Character" }
       success: (data) =>
         gameid = $("##{@gameNames[@game.val()].replace(" ", "")}") 
-        gameid.append($.parseHTML(characterLink(data.id, data.name)))
-        html = (makeCharacter data.html)
+        gameid.append($.parseHTML(characterLink(data.id, data.name.name)))
+        [html, button] = getCharacter(data)
         html.hide()
-        html.insertBefore(@cont)
-        character = new Character
-          el  : html
-          name: data.name
-          id  : data.id
-        character.el.animate({width: 'toggle'})
+        @cont.before html
+        html.animate({width: 'toggle'})
+        new Character
+          el     : html
+          button : button
+          data   : data
       error: (err) =>
     @delete(ev)
   delete: (ev) =>

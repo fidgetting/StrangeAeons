@@ -81,28 +81,6 @@ case class User(
   
 }
 
-case class CharacterSet(val chars: Seq[(User, Game, Character)]) {
-  
-  def json(getter: User, base: Option[Game]) = JsArray(
-    for((user, game, char) <- chars) yield Json.obj(
-      "picture" -> char.imgUrl,
-      "id"      -> char.id.get,
-      "name"    -> char.name,
-      "min"     -> char.minName,
-      "info"    -> char.info,
-      "user"    -> Json.obj("name" -> user.name, "link" -> routes.Application.user(user.name).toString),
-      "game"    -> Json.obj("name" -> game.name, "link" -> routes.Application.game(game.id.get).toString),
-      "link"    -> routes.Characters.display(char.id.get).toString,
-      "state"   -> (
-        if     (getter.id.get == char.user_id                     ) { "owned" }
-        else if(getter.id.get == base.map(_.master).getOrElse(-1) ) { "take"  }
-        else                                                        { "none"  }
-      )
-    )
-  )
-  
-}
-
 object User {
   
   def genPass(password: String) =
@@ -121,16 +99,9 @@ object User {
     }
   }
   
-  def parseAll = {
-    User.parse ~ Game.parse ~ Character.parse map {
-      case user ~ game ~ character =>
-        (user, game, character)
-    }
-  }
-  
-  def list(user: User): CharacterSet = {
+  def list(user: User) = {
     DB.withConnection { implicit connection =>
-      CharacterSet(SQL(
+      SQL(
         """
           select * from characters
             left join users on characters.user_id = users.id
@@ -140,7 +111,7 @@ object User {
         """
       ) on (
         'id -> user.id
-      ) as (parseAll *))
+      ) as (Character.parse *)
     }
   }
   

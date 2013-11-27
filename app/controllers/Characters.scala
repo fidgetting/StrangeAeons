@@ -66,10 +66,7 @@ object Characters extends Controller with Secured {
           stats map (Json.parse(_)))
         Note.add(Note(NotAssigned, user.id.get, nc.id.get, note, false))
 
-        Ok(Json.obj(
-          "id"   -> nc.id.get,
-          "name" -> nc.name
-        ))
+        Ok(nc.rest_json(user))
       }
     )
   }
