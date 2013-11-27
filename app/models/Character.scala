@@ -78,7 +78,7 @@ object Character {
     controllers.Application.storage.url("nonPerson.png", 100)
 
   def toJson(getter: User, in: Seq[Character]): JsValue =
-    JsArray(for(c <- in) yield c.rest_json(getter, false))
+    JsArray(for(c <- in if c.visible) yield c.rest_json(getter, false))
   
   def parse: RowParser[Character] = {
     get[Pk[Long]]      ("characters.id"     ) ~
