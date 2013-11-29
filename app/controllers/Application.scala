@@ -118,9 +118,12 @@ object Application extends Controller with Secured {
       
       val orImg  = Scalr.resize(ImageIO.read(picture.ref.file), 400)
       val ratio  = orImg.getHeight.toDouble / orImg.getWidth.toDouble
-      val tbImg = Scalr.crop(Scalr.resize(orImg,
+      val inter  = Scalr.resize(orImg,
         if(ratio > picture_ratio) Scalr.Mode.FIT_TO_WIDTH else Scalr.Mode.FIT_TO_HEIGHT,
-        if(ratio > picture_ratio) 75                      else 80), 75, 80)
+        if(ratio > picture_ratio) base_w                  else base_h)
+      val dw     = Math.max((inter.getWidth  - base_w) / 2, 0)
+      val dh     = Math.max((inter.getHeight - base_h) / 2, 0)
+      val tbImg  = Scalr.crop(inter, dw, dh, base_w, base_h)
       
       ImageIO.write(orImg, "png", file)
       ImageIO.write(tbImg, "png", thumb)
