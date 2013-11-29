@@ -4,7 +4,7 @@
 ################################################################################
 
 getCharacter = (data) ->
-  img = $("""<img class="picture charIcon" data-id="#{data.id}" src="#{data.picture}" alt="character pic">""")
+  img = $("""<img class="picture charIcon" data-id="#{data.id}" src="#{data.thumb}" alt="character pic">""")
   res = $($.parseHTML("""
     <div class="inline showEntity">
       <div class="box character">
