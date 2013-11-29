@@ -56,6 +56,7 @@ case class Character(
       "link"    -> routes.Application.game(game.id.get).toString,
       "id"      -> game.id.get),
     "picture" -> imgUrl,
+    "thumb"   -> thuUrl,
     "data"    -> (if(include_data) json else Json.obj()))
 
   def formatedDate =
@@ -68,7 +69,8 @@ case class Character(
       if(idx < seq.size) Option(seq(idx)) else None
   }
   
-  def imgUrl = controllers.Application.storage.url(picture, 100)
+  def imgUrl = controllers.Application.storage.url(     picture , 100)
+  def thuUrl = controllers.Application.storage.url(s"t_$picture", 100)
   
 }
 

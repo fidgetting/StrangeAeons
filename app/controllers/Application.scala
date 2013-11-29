@@ -21,6 +21,7 @@ import fly.play.s3._
 import scala.concurrent.duration._
 import scala.concurrent.Await
 import org.imgscalr.Scalr
+import java.io.FileInputStream
 
 object Application extends Controller with Secured {
   
@@ -93,33 +94,45 @@ object Application extends Controller with Secured {
       )
     ).as("text/javascript")
   }
-  
+
+  def sendFile(name: String, ctype: String, file: java.io.File) = {
+    val istr = new FileInputStream(file)
+    val dest = new Array[Byte](file.length().toInt)
+
+    istr read dest
+    storage add BucketFile(name, ctype, dest)
+  }
+
+  val base_w = 75
+  val base_h = 80
+  val picture_ratio: Double =  base_h.toDouble / base_w.toDouble
   def upload(id: Long) = canUpload(parse.multipartFormData)(id) { user => implicit request =>
     val name = (for {
       picture <- request.body.file("picture")
       user    <- username(request)
     } yield {
       val Some(ctype) = picture.contentType
-      val file = new java.io.File("/tmp/picture")
+      val picn = User.pictureName
+      val file  = new java.io.File(s"/tmp/picture_$picn")
+      val thumb = new java.io.File(s"/tmp/thumb_$picn")
       
-      var orImg = ImageIO.read(picture.ref.file)
-      
-      if(orImg.getHeight() > 400) {
-        orImg = Scalr.resize(orImg, 400)
-      }
+      val orImg  = Scalr.resize(ImageIO.read(picture.ref.file), 400)
+      val ratio  = orImg.getHeight.toDouble / orImg.getWidth.toDouble
+      val tbImg = Scalr.crop(Scalr.resize(orImg,
+        if(ratio > picture_ratio) Scalr.Mode.FIT_TO_WIDTH else Scalr.Mode.FIT_TO_HEIGHT,
+        if(ratio > picture_ratio) 75                      else 80), 75, 80)
       
       ImageIO.write(orImg, "png", file)
-      
-      val istr = new java.io.FileInputStream(file)
-      val dest = new Array[Byte](file.length().toInt)
-      val picn = User.pictureName
-      
-      istr.read(dest)
-      
-      storage add BucketFile(picn, ctype, dest)
-      
+      ImageIO.write(tbImg, "png", thumb)
+
+
+
+      sendFile(     picn , ctype, file)
+      sendFile(s"t_$picn", ctype, thumb)
+
       file.delete()
-      
+      thumb.delete()
+
       Character.updatePicture(id, picn)
       
       picn
