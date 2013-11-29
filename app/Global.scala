@@ -54,9 +54,12 @@ object Global extends GlobalSettings {
                 ostr.write(content)
                 val img    = ImageIO.read(tmpf)
                 val ratio  = img.getHeight.toDouble / img.getWidth.toDouble
-                val thu    = Scalr.crop(Scalr.resize(img,
+                val inter  = Scalr.resize(img,
                   if(ratio > picture_ratio) Scalr.Mode.FIT_TO_WIDTH else Scalr.Mode.FIT_TO_HEIGHT,
-                  if(ratio > picture_ratio) 75                      else 80), 75, 80)
+                  if(ratio > picture_ratio) base_w                  else base_h)
+                val dw     = Math.max((inter.getWidth  - base_w) / 2, 0)
+                val dh     = Math.max((inter.getHeight - base_h) / 2, 0)
+                val thu    = Scalr.crop(inter, dw, dh, base_w, base_h)
 
                 ImageIO.write(thu, "png", outf)
                 sendFile(s"t_$name", ctype, outf)
@@ -65,8 +68,7 @@ object Global extends GlobalSettings {
                 outf.delete
 
               } catch {
-                case e => Logger.warn(s"Exception: $name $e")
-                case _ => Logger.warn(s"Exception: $name")
+                case e: Throwable => Logger.warn(s"Exception: $name $e")
               }
             case _ => Logger.info(s"No Match: $name")
           }
