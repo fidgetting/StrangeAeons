@@ -157,11 +157,12 @@ class Character extends Backbone.View
         ta.click       @delete
       error: (err) =>
   delete: =>
-    jsRoutes.controllers.Characters.delete(@data.id).ajax
-      success: (data) =>
-        $("##{@data.min}").remove()
-        @el.animate({width: 'toggle'}, => @el.remove())
-      error: (err) ->
+    if confirm("Delete character #{@data.name.name}")
+      jsRoutes.controllers.Characters.delete(@data.id).ajax
+        success: (data) =>
+          $("##{@data.min}").remove()
+          @el.animate({width: 'toggle'}, => @el.remove())
+        error: (err) ->
 
 class Group extends Backbone.View
   initialize: (pass) ->
@@ -225,7 +226,7 @@ class CreateView extends Backbone.View
       data: { data: "{}", note: "New Character" }
       success: (data) =>
         gameid = $("##{@gameNames[@game.val()].replace(" ", "")}") 
-        gameid.append($.parseHTML(characterLink(data.id, data.name.name)))
+        gameid.append($.parseHTML(characterLink(data.id, data.name.name.name)))
         [html, button] = getCharacter(data)
         html.hide()
         @cont.before html

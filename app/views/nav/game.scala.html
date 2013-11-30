@@ -3,7 +3,7 @@
 <li data-game="@game.id" data-name="@game.name">
   <span class="toggle"></span>
   @if(game.master == user.id.get) {
-    <a href="@routes.Games.delete(game.id.get)">
+    <a href="@routes.Games.delete(game.id.get)" onclick="return delGame()">
       <button class="icon delete grm"></button>
     </a>
   }
