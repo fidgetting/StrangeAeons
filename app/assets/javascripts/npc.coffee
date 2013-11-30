@@ -140,15 +140,15 @@ class NpcCreate extends Backbone.View
         data: { data: JSON.stringify(@npc), note: @note.val() }
         success: (data) =>
           gameid = $("##{game_name.replace(" ", "")}") 
-          gameid.append($.parseHTML(characterLink(data.id, data.name)))
-          html = (makeCharacter data.html)
+          gameid.append($.parseHTML(characterLink(data.id, data.name.name)))
+          [html, button] = getCharacter(data)
           html.hide()
-          html.insertBefore(@cont)
-          character = new Character
-            el  : html
-            name: data.name
-            id  : data.id
-          character.el.animate({width: 'toggle'})
+          @cont.before html
+          html.animate({width: 'toggle'})
+          new Character
+            el     : html
+            button : button
+            data   : data
 
 npcui         = undefined
 push -> npcui = new NpcCreate

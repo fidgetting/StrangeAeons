@@ -9,7 +9,6 @@ class Navigator extends Backbone.View
       fd = new FormData(document.getElementById("fileinfo"))
       jsRoutes.controllers.Application.upload(@cid).ajax
         success: (data) => delay 1000, =>
-          log data.url
           @tar.attr("src", data.url)
         error: (err) =>
         data: fd,

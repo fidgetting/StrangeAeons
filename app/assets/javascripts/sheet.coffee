@@ -36,10 +36,6 @@ getAssociation = (data) -> $($.parseHTML("
   "))[1]
 
 character_id = 0
-###character    = { }
-meta         = { }
-npcdata      = { }
-system       = { }###
 
 ################################################################################
 ################################################################################
@@ -66,10 +62,11 @@ class Control extends Backbone.View
       error: (err) =>
   
   delete: (ev) ->
-    jsRoutes.controllers.Characters.delete(character_id).ajax
-      success: (data) =>
-        window.location.href = data.url
-      error: (err) =>
+    if(confirm("Delete this character?"))
+      jsRoutes.controllers.Characters.delete(character_id).ajax
+        success: (data) =>
+          window.location.href = data.url
+        error: (err) =>
 
 ################################################################################
 ################################################################################
@@ -127,11 +124,12 @@ class Note extends Backbone.View
       set : @set
       base: this
   delete: (ev) =>
-    jsRoutes.controllers.Notes.delete(@note.id).ajax
-      success: (data) =>
-        @el.slideUp => @el.remove()
-      error: (err) =>
-        # TODO: Deal with
+    if confirm("Delete note?")
+      jsRoutes.controllers.Notes.delete(@note.id).ajax
+        success: (data) =>
+          @el.slideUp => @el.remove()
+        error: (err) =>
+          # TODO: Deal with
 
 class EditNote extends Backbone.View
   events:

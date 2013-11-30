@@ -52,6 +52,9 @@ arRemove = (arr) ->
 
   arr
 
+delGame = =>
+  confirm("Delete Game?")
+
 ################################################################################
 ### Used when disabling the main screen ########################################
 ################################################################################
@@ -60,7 +63,12 @@ date      = new Date()
 time      = date.getTime()
 
 saveClick  = ->
-  $("#cover").fadeIn()
+  to_cover = $("#character_sheet")
+  cover    = $("#cover")
+  cover.css("height", to_cover.height())
+  cover.css("width" , to_cover.width())
+
+  cover.fadeIn()
   time = date.getTime()
 
 saveFinish = ->
@@ -166,3 +174,26 @@ getSelect = (list) =>
       ret.append($ """<option value="#{list[from]}">#{from}</option>""")
 
   ret
+
+################################################################################
+### Cover dialogs ##############################################################
+################################################################################
+
+overall_container = $ "#main"
+overall_window    = $ window
+class AlertDialog
+  constructor: (@inner) ->
+    @html  = $ """<div class="dialog"></div>"""
+    @alert = $ """<div class="alert"></div>"""
+    @cover = $ """<div class="pageCover"></div>"""
+
+    @cover.css "height", overall_window.height
+    @cover.css "width" , overall_window.width
+
+    @alert.append @inner.html
+    @html.append @alert
+    @html.append @cover
+
+    overall_container.append(@html)
+    log "called"
+
