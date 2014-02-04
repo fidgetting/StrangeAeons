@@ -7,11 +7,17 @@ import db._
 import libs._
 import json._
 import Play.current
+import concurrent._
 
 import anorm._
 import SqlParser._
+import Execution.Implicits._
 
 import controllers._
+import scala.concurrent.duration._
+import scala.concurrent.Await
+
+import fly.play.s3._
 
 case class Game(
     id    : Pk[Long] = NotAssigned,
@@ -344,13 +350,21 @@ object Game {
       ).as(scalar[Boolean].single)
     }
   }
-
-  def systemFile(name: String): String =
-    fromInputStream(new java.io.FileInputStream(Play.getFile(
-      s"/public/data/${name}.json")))(io.Codec("UTF-8")).mkString
   
+  def system(name: String): JsValue = {
+    val result = ((Application.storage get s"$name.json") map {
+      case Right(BucketFile(name, contentType, content, acl, Some(headers))) =>
+        Json.parse(content)
+
+      case Left(error) =>
+        Json.obj()
+    })
+
+    Await.result(result, 60.seconds)
+  }
+
   def system(game: Game): JsValue =
-    Json.parse(systemFile(game.system))
+    system(game.system)
   
   def starting(id: Long): JsValue =
     system(Game(id)) \ "Starting"

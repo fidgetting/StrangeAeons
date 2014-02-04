@@ -15,7 +15,7 @@
 
     var character = @Html( character.stat.toString );
     var meta      = @Html( character.meta.toString );
-    var system    = @Html( Json.parse(Game.systemFile(name)).toString );
+    var system    = @Html( Game.system(character.game).toString );
 
   </script>
   <script type="text/javascript" src="@routes.Assets.at("javascripts/systems/" + name + ".js")"></script>
