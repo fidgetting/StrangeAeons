@@ -49,10 +49,10 @@ object Restful extends Controller with Secured {
         case ("Character", None, Some(name)) => wrap(user, Character(name))
 
         case ("System",    None, Some(starting_regex(name, sub))) =>
-          Json.obj("code" -> 0, "success" -> (sub.split(":") foldLeft Json.parse(Game.systemFile(name)))
+          Json.obj("code" -> 0, "success" -> (sub.split(":") foldLeft (Game system name))
             { case (curr, next) => curr \ next })
         case ("System",    None, Some(name)) =>
-          Json.obj("code" -> 0, "success" -> Json.parse(Game.systemFile(name)))
+          Json.obj("code" -> 0, "success" -> (Game system name))
 
         case _ => error(2, s"Invalid type combination: ($Type, $id_in, $name_in)")
       }

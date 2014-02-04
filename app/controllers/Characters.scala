@@ -81,7 +81,7 @@ object Characters extends Controller with Secured {
   }
   
   def system(name: String) = Action { implicit request =>
-    Ok(Json.parse(Game.systemFile(name)))
+    Ok(Game system name)
   }
   
   def take(character: Long) = isMaster(Character(character).game_id) { user => _ =>
