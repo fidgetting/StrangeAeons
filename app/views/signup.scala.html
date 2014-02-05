@@ -5,12 +5,12 @@
   <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
-    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.0.0.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.0.3.min.js")"></script>
     <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
     <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
     <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
     <script type="text/javascript" src="@routes.Assets.at("javascripts/libs.js")"></script>
-    <script type="text/javascript" src="@routes.Assets.at("javascripts/login.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/signup.js")"></script>
   </head>
   <body>
     <header class="topbar">
@@ -27,7 +27,7 @@
           </div>
         }
         
-        <h2>Sign Up</h2>
+        <h1>Sign Up</h1>
         
         <p>
           <input type="email" name="email" id="email" placeholder="Email" id="email" value="@form("email").value" required>

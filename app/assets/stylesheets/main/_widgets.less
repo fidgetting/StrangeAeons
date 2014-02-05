@@ -17,6 +17,7 @@
     text-shadow: -1px -1px 0 rgba(0,0,0,.3);
     color: @buttonColor;
     cursor: pointer;
+    border: white;
     &:hover {
         .gradient(fadeout(#bff, 70%), fadeout(#bff, 100%));
         background-color: @headerDark;
@@ -84,31 +85,13 @@
 
   .bottom {
     position: relative;
-    height: 50px;
+    height: 10px;
 
-    .submit {
-      position: absolute;
-      right: 0;
-    }
+    a { .button() }
 
-    .openid {
-      position: absolute;
-      left: 5px;
-      top: 5px;
-      padding: 15px 10px 5px 10px;
-      border-radius: 5px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-      border-radius: 3px;
-
-      .label {
-        display: inline;
-        vertical-align: middle;
-        position: absolute;
-        top: -8px;
-        left: 4px;
-        background-color: white;
-        padding: 1px;
-      }
+    div {
+      padding: 3px;
+      display: inline-block;
     }
   }
 }

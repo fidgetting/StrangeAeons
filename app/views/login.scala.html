@@ -5,18 +5,28 @@
   <head>
     <title>Login</title>
     <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-2.0.3.min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/underscore-min.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/backbone-min.js")"></script>
+    <script type="text/javascript" src="@routes.Application.javascriptRoutes"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/libs.js")"></script>
+    <script type="text/javascript" src="@routes.Assets.at("javascripts/login.js")"></script>
+    <script type="text/javascript">
+
+        var gmail_url  = "@routes.Auth.openid("google")"
+        var yahoo_url  = "@routes.Auth.openid("yahoo")"
+        var singup_url = "@routes.Auth.signup()"
+
+    </script>
   </head>
   <body>
     <header class="topbar">
       <h1 id="logo">Login</h1>
-      <div id="signup">
-        <a class="btn primary" href="@routes.Auth.signup()">Sign Up</a>
-      </div>
     </header>
       
     <section id="login">
   
-      @helper.form(routes.Auth.authenticate) {
+      @helper.form(action = routes.Auth.authenticate, 'id -> "form") {
 
         @form.globalError.map { error =>
           <div class="error">
@@ -37,27 +47,26 @@
         }
         
         <h1>Sign In</h1>
-        
+
         <p>
           <input type="email" name="email" placeholder="Email" id="email" value="@form("email").value">
         </p>
         <p>
-          <input type="password" name="password" id="password" placeholder="Password">
+          <input type='password' name='password' id='password' placeholder='Password'>
         </p>
+
         <div class="bottom">
-          <span class="openid">
-            <div class="label">OpenID</div>
-            <a href="@routes.Auth.openid("google")"><img id="google" src="@routes.Assets.at("images/icons/google.ico")"></a>
-            <a href="@routes.Auth.openid("yahoo")"><img id="yahoo" src="@routes.Assets.at("images/icons/yahoo.png")"></a>
-          </span>
-          <span class="submit">
-            <button type="submit" name="login"  class="btn primary">Login</button>
+          <span id="buttons" class="submit">
           </span>
         </div>
+
+        <input type="submit" style="display: none;"/>
         
       }
     </section>
   </body>
+
+  <script type="text/javascript"> complete(); </script>
 </html>
 
 

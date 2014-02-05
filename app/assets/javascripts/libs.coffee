@@ -179,8 +179,10 @@ getSelect = (list) =>
 ### Cover dialogs ##############################################################
 ################################################################################
 
-overall_container = $ "#main"
-overall_window    = $ window
+overall_container = undefined
+push -> overall_container = $ "#main"
+overall_window = undefined
+push -> overall_window = $ window
 class AlertDialog
   constructor: (@inner) ->
     @html  = $ """<div class="dialog"></div>"""

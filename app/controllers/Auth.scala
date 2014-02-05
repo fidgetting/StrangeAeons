@@ -119,8 +119,6 @@ object Auth extends Controller with Secured {
     ))
   )
 
-  lazy val openid_url_parse = """https:(.+)id=(.+)""".r
-
   def openid(service: String) = Action { implicit request =>
     val (url, params) = openid_params.getOrElse(service, ("unknown" -> Seq()))
     AsyncResult(OpenID.redirectURL(url, routes.Auth.openidValidate.absoluteURL(), params)
