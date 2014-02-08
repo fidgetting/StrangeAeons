@@ -200,7 +200,7 @@ object Game {
           select * from games
             left join characters on characters.game_id = games.id
             where games.id = {id}
-            order by characters.id;
+            order by characters.name;
         """
       ).on(
         'id -> game.id.get
@@ -217,7 +217,8 @@ object Game {
             where games.id = {game_id} and (
               characters.visible or
               characters.user_id = user_id
-            );
+            )
+            order by characters.name;
         """
       ).on(
         'game_id -> game.id.get,
