@@ -69,11 +69,11 @@ object Games extends Controller with Secured {
     Ok(Json.obj("names" -> Game.removeUser(game_id, user_id).map { _.id.get }))
   }
   
-  def characters(id: Long) = inGame(id) { _ => _ =>
+  def characters(id: Long) = withAuth { user => _ =>
     val char = Character(id)
     
     Ok(Json.obj("names" -> JsObject(
-      for(c <- Game(char.game_id).characters if(c.name != char.name))
+      for(c <- Game.characters(Game(char.game_id), user) if(c.name != char.name))
         yield c.name -> JsNumber(c.id.get)
     )))
   }

@@ -9,7 +9,7 @@
   }
   <a class="gameName" href="@routes.Application.game(game.id.get)">@game.name</a>
   <ul id="@game.name.replace(" ", "")">
-    @for(char <- game.characters if(char.visible || char.user_id == user.id.get)) {
+    @for(char <- Game.characters(game, user)) {
     <li class="char@char.id.get" id="@char.minName" data-character="@char.id">
       <a class="name" href="@routes.Characters.display(char.id.get)">@char.name</a>
     </li>}

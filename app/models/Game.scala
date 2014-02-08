@@ -26,9 +26,6 @@ case class Game(
     system: String,
     s_data: String) extends Restful {
   
-  lazy val characters =
-    Game.characters(id.get)
-  
   lazy val data =
     Json.parse(s_data)
 
@@ -41,7 +38,6 @@ case class Game(
       "name" -> char.name
     ))
   )
-
 }
 
 case class AspectInfo(
@@ -196,25 +192,9 @@ object Game {
     
     ret
   }
-  
-  def characters(id: Long): Seq[Character] = {
-    DB.withConnection { implicit connection =>
-      SQL(
-        """
-          select * from characters
-            left join users on characters.user_id = users.id
-            left join games on characters.game_id = games.id
-            where games.id = {id}
-            order by characters.name;
-        """
-      ) on (
-        'id -> id
-      ) as (Character.parse *)
-    }
-  }
 
   def characters(game: Game): Seq[Character] = {
-    DB.withConnection {implicit connection =>
+    DB.withConnection { implicit connection =>
       SQL(
         """
           select * from games
@@ -224,6 +204,24 @@ object Game {
         """
       ).on(
         'id -> game.id.get
+      ).as(Character.parse *)
+    }
+  }
+
+  def characters(game: Game, user: User): Seq[Character] = {
+    DB.withConnection { implicit connection =>
+      SQL(
+        """
+          select * from games
+            left join characters on characters.game_id = games.id
+            where games.id = {game_id} and (
+              characters.visible or
+              characters.user_id = user_id
+            );
+        """
+      ).on(
+        'game_id -> game.id.get,
+        'user_id -> user.id.get
       ).as(Character.parse *)
     }
   }
