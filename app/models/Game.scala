@@ -216,7 +216,7 @@ object Game {
             left join characters on characters.game_id = games.id
             where games.id = {game_id} and (
               characters.visible or
-              characters.user_id = user_id
+              characters.user_id = {user_id}
             )
             order by characters.name;
         """
